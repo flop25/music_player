@@ -1,0 +1,18 @@
+#list LI {
+	display:block;
+	margin:4px;
+	padding:4px;
+	border: 1px dotted #FFFFFF;
+}
+#list_music
+{
+	border: 1px dashed #FFFFFF;
+	width:100%;
+}
+.help
+{
+	margin:10px;
+	padding:5px;
+	border: 1px dotted #FFFFFF;
+	text-align:justify;
+}

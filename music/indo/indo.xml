@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+	<trackList>
+		<track>
+			<title>01 Indochine Paradize Paradize</title>
+			<location>music/indo/01 Indochine Paradize Paradize.mp3</location>
+		</track>
+		<track>
+			<title>Indochine - 02 - Electrastar</title>
+			<location>music/indo/Indochine - 02 - Electrastar.mp3</location>
+		</track>
+		<track>
+			<title>Indochine - 04 - Mao Boy</title>
+			<location>music/indo/Indochine - 04 - Mao Boy.mp3</location>
+		</track>
+		<track>
+			<title>Indochine - J'Ai Demande a La Lune</title>
+			<location>music/indo/Indochine - J'Ai Demande a La Lune.mp3</location>
+		</track>
+		<track>
+			<title>Indochine - L'Aventurier</title>
+			<location>music/indo/Indochine - L'Aventurier.mp3</location>
+		</track>
+	</trackList>
+</playlist>
