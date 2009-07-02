@@ -20,6 +20,7 @@ $lang['mp_help_q4'] = "How does this plugin work ?";
 $lang['mp_help_q5'] = "How can i added distant mp3 or localised in others folders ?";
 $lang['mp_help_q6'] = "It's possible to add podcats ?";
 $lang['mp_help_q7'] = "I can't find answers here / I have some problemes";
+$lang['mp_help_q7'] = "New : you can restric the acces of the player";
 
 $lang['mp_help_div1'] = "Mp3 must be put into Music folder of the plugin like this \"[PWG folder]/plugins/music_player/music/[new playlist]/\". You should make your playlists order by artist (music/moby/go.pm3), or put artist's mane directly into file name (music/electro/moby-go.pm3)";
 $lang['mp_help_div2'] = "You do not update your playlist : So click on 2nd icon ('Manage music') near the playlist, then in final step, do 'Submit modifications'";
@@ -37,7 +38,9 @@ To manage playlist :
 <br />- Then follow these steps : Dont forget the last one !";
 $lang['mp_help_div5'] = "Yes : For this go into the playlist of your choice and, on step two, add your file. Be careful : Even if mp3 is on the same server that this plugin, you need to write complete ardress with http://";
 $lang['mp_help_div6'] = "Yes : Since 1.3 a block for podcast and distant playlist have been added. Be careful  : playlist must be in Atom, Xspf (use by the plugin), or RSS format. (podcast are always RSS)";
-$lang['mp_help_div7'] = 'You can find support for the plugins here : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopi … t;/a>';
+$lang['mp_help_div7'] = 'You can find support for the plugins here : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781/a>';
+$lang['mp_help_div8'] = "New : you can restric the acces of the player. Indeed, if you create the group 'music_group', only the members of this group will be able to listen to the music. If it doesn't exist (the case on default),  everyone can acces to the player";
+
 
 $lang['mp_admin_leg'] = 'Playlist manager';
 $lang['mp_admin_tt_synchro'] = 'Synchronise with /music folder';
@@ -133,6 +136,8 @@ $lang['mp_msg_admin_6'] = 'Configuration of the plugin saved';
 $lang['mp_uploadimg_ok'] = 'Picture saved';
 $lang['mp_linkimg_ok'] = 'Picture saved';
 $lang['mp_info_min']="[ The thumbnail is optional. ]";
+
+$lang['mp_text_no_autorisation']="You are not allowed to listen music ! Please contact the webmaster to know why, and maybe to be allow";
 
 
 ?>

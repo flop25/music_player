@@ -14,6 +14,7 @@
     <li><a href="#q5">{'mp_help_q5'|@translate}</a></li>
     <li><a href="#q6">{'mp_help_q6'|@translate}</a></li>
     <li><a href="#q7">{'mp_help_q7'|@translate}</a></li>
+    <li><a href="#q">{'mp_help_q8'|@translate}</a></li>
    </ul>
   </dd>
 </dl>
@@ -31,6 +32,8 @@
 <div id="q6" class="help"><p><strong>{'mp_help_q6'|@translate}</strong><br />{'mp_help_div6'|@translate}</p>
 </div>
 <div id="q7" class="help"><p><strong>{'mp_help_q7'|@translate}</strong><br />{'mp_help_div7'|@translate}</p>
+</div>
+<div id="q8" class="help"><p><strong>{'mp_help_q8'|@translate}</strong><br />{'mp_help_div8'|@translate}</p>
 </div>
 <p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin.php">{'mp_adm_return'|@translate}</a></p>
 </div>

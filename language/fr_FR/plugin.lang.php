@@ -19,6 +19,7 @@ $lang['mp_help_q4'] = "Comment fonctionne le plugin ?";
 $lang['mp_help_q5'] = "Comment puis-je ajouter des mp3 distants ou présent dans d'autres dossiers ?";
 $lang['mp_help_q6'] = "Peut-on ajouter des podcats ou une playlist distante ?";
 $lang['mp_help_q7'] = "Je ne trouve pas de réponses ici / J'ai un très gros problème";
+$lang['mp_help_q8'] = "Nouveau : vous pouvez restreindre les droits d'écoute";
 
 $lang['mp_help_div1'] = "Les mp3 doivent être mis dans le dossier music du plugin de cette façon \"[le dossier de pwg]/plugins/music_player/music/[nouvelle playlist]/\". Il est conseillé de faire des playlist par artiste (music/moby/go.pm3), ou sinon mettre le nom de l'artiste dans le nom du fichier mp3 (music/electro/moby-go.pm3)";
 $lang['mp_help_div2'] = "Vous n'avez pas remis à jour la playlist : pour ce faire cliquez sur la 2° icône ('Gérer la musique') à coté de la playlist concernée, puis à la dernière étape faites 'Valider les modifications'";
@@ -37,6 +38,7 @@ pour gérer une playlist :
 $lang['mp_help_div5'] = "Oui : pour celà rendez-vous dans la playlist de votre choix et, à l'étape 2, ajoutez votre fichier. Attention : même si le mp3 est sur le même serveur que ce plugin, il faut une url complète avec http://";
 $lang['mp_help_div6'] = "Oui : depuis la 1.3 un block pour podcast et playlist distante a été ajouté. Attention : la playlist doit être au format Atom, Xspf (utilisé par le plugin), ou RSS. (Les podcast sont tous des RSS)";
 $lang['mp_help_div7'] = 'Le support du plugin s\'effectue ici : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781</a>';
+$lang['mp_help_div8'] = "Nouveau : vous pouvez restreindre les droits d'écoute. En effet, si vous créer le groupe 'music_group', seul les utilisateurs appartenant à ce groupe pourront lire la musique. S'il n'est pas créé (cas par défaut), tout le monde peut accéder au lecteur";
 
 $lang['mp_admin_leg'] = 'Gestion des playlist';
 $lang['mp_admin_tt_synchro'] = 'Synchroniser avec le dossier /music';
