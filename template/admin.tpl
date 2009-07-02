@@ -50,7 +50,7 @@
 <legend>{'mp_admin_leg2'|@translate}</legend>
 <form action="" method="post" name="option_plugin">
   <input type="checkbox" name="evidence" value="true" {$MP_EVIDENCE} />
-  {'mp_admin_2_opt1'|@translate}// !!Inactive option !! <br />
+  {'mp_admin_2_opt1'|@translate}<br />
   <input type="checkbox" name="head" value="true" {$MP_HEAD} />
   {'mp_admin_2_opt2'|@translate}<br />
   <input type="checkbox" name="foot" value="true" {$MP_FOOT} />

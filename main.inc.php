@@ -26,11 +26,16 @@ include_once(dirname(__FILE__).'/class.inc.php');
 
 add_event_handler('get_admin_plugin_menu_links', array(&$m_p, 'mp_lien_menu') );
 
-//add_event_handler('loc_end_menubar', array(&$m_p, 'placer_lien'), 70 ); 
-//add_event_handler('blockmanager_apply', array(&$m_p, 'placer_lien'), 70 ); 
 
-add_event_handler('blockmanager_apply', array(&$m_p, 'placer_block'));
-add_event_handler('blockmanager_register_blocks', array(&$m_p, 'register_mp_menubar_blocks'));
+add_event_handler('loc_end_index', array(&$m_p, 'placer_icon') );
+
+global $conf;
+$conf_plugin = explode("," , $conf['mp_plugin']);
+if (isset($conf_plugin[0]) and $conf_plugin[0]=="true")
+{
+	add_event_handler('blockmanager_apply', array(&$m_p, 'placer_block'));
+	add_event_handler('blockmanager_register_blocks', array(&$m_p, 'register_mp_menubar_blocks'));
+}
 
 add_event_handler('loc_begin_page_header', array(&$m_p, 'add_css') );
 
