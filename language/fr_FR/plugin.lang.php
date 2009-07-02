@@ -134,5 +134,7 @@ $lang['mp_uploadimg_ok'] = 'Upload réussi';
 $lang['mp_linkimg_ok'] = 'Image enregistrée';
 $lang['mp_info_min']="[ La miniature est optionnelle. ]";
 
+$lang['mp_text_no_autorisation']="Vous n'êtes PAS autorisé à écouter de la musique ! Veuillez contacter l'administrateur afin de savoir pourquoi et éventuellement vous autoriser";
+
 
 ?>

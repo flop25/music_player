@@ -4,39 +4,49 @@ include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
 
 $m_p = get_plugin_data('music_player');
 
+///////////[ interdiction groupe
+global $prefixeTable;
+$query = '
+SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
+  WHERE name IN (\'music_group\') ;';
+$data_grp = mysql_fetch_array(pwg_query($query));
+$exist_group = $data_grp['result'];   
+if ( $exist_group == 1 )
+{
+	$display=0;
+	$query = 'SELECT group_id FROM '.USER_GROUP_TABLE.' WHERE user_id IN (\''.$user['id'].'\');';
+	$result = pwg_query($query);
+	$grp_id = array();
+	while ($row = mysql_fetch_assoc($result)) {
+		array_push($grp_id, $row);
+	}
+	
+	foreach ($grp_id as $grp)
+	{
+		$query = 'SELECT id FROM '.GROUPS_TABLE.' WHERE name IN (\'music_group\') ;';
+		$rep = mysql_fetch_array(pwg_query($query));
+		if ($rep['id']==$grp['group_id'] )
+		{
+			$display=1;
+		}
+	}
+
+}
+if (isset($display) and $display==0)
+{
+	include(PHPWG_ROOT_PATH.'include/page_header.php');
+	load_language('plugin.lang', $m_p->plugin_path);
+	$template->set_filename('lecteur', $m_p->plugin_path.'template/no.tpl');
+	$template->parse('lecteur');
+	include(PHPWG_ROOT_PATH.'include/page_tail.php');
+	
+	
+}
+//////////
+else {
 
 $page['body_id'] = 'lecteur';
 
-//css et js
-/*
-$title= 'Lecteur';
-      $template -> assign_block_vars(
-        'head_element', array (
-          'CONTENT' => '<link rel="stylesheet" type="text/css" href="./template/lecteur.css">'
-        )
-      );
-      $template -> assign_block_vars(
-        'head_element', array (
-          'CONTENT' => '<script type="text/javascript" src="./player/swfobject.js"></script>'
-        )
-      );
-      $template -> assign_block_vars(
-        'head_element', array (
-          'CONTENT' => '<script type="text/javascript">
-
-	function loadFile(obj) { thisMovie("playlist").loadFile(obj); };
-	// This is a javascript handler for the player and is always needed.
-	function thisMovie(movieName) {
-	    if(navigator.appName.indexOf("Microsoft") != -1) {
-			return window[movieName];
-		} else {
-			return document[movieName];
-		}
-	};
-
-</script>'
-        )
-      );*/
   global $conf;
   $conf_plugin = explode("," , $conf['mp_plugin']);
   $template->assign(
@@ -46,32 +56,8 @@ $title= 'Lecteur';
     )
   );
 
-    /*if ($conf_plugin[1]!='true')
-    {
-        $template -> assign_block_vars(
-        'head_element', array (
-          'CONTENT' => '<style type="text/css">
-#theHeader
-{
-display:none;
-}
-</style>'
-        )
-      );
-    }
-    if ($conf_plugin[2]!='true')
-    {
-	      $template -> assign_block_vars(
-        'head_element', array (
-          'CONTENT' => '<style type="text/css">
-#copyright
-{
-display:none;
-}		  </style>'
-        )
-      );
-   }*/
-	  
+
+/*
 /////[ si metre en evidence
 	if ($conf_plugin[0]=="true")
 	{
@@ -87,7 +73,7 @@ display:none;
 	  }
 	}
 ///
-
+*/
 include(PHPWG_ROOT_PATH.'include/page_header.php');
 	load_language('plugin.lang', $m_p->plugin_path);
 
@@ -175,5 +161,6 @@ $template->set_filename('lecteur', $m_p->plugin_path.'template/lecteur.tpl');
 // +-----------------------------------------------------------------------+
 $template->parse('lecteur');
 include(PHPWG_ROOT_PATH.'include/page_tail.php');
+}//else groupe
 //$template->p();
 ?>
