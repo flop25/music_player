@@ -75,7 +75,7 @@ $page['body_id'] = 'lecteur';
 ///
 */
 include(PHPWG_ROOT_PATH.'include/page_header.php');
-	load_language('plugin.lang', $m_p->plugin_path);
+load_language('plugin.lang', $m_p->plugin_path);
 
 $template->assign(
   array(
@@ -117,10 +117,68 @@ foreach ($pl_ex as $list) {
 				));
 }
 // +-----------------------------------------------------------------------+
+// |                         Configuration du style                        |
+// +-----------------------------------------------------------------------+
+$conf_lecteur = explode("," , $conf['mp_lecteur']);
+
+if ($conf_lecteur[10]=='true')
+{
+	$file = 'lecteur.css';
+	$dir = LOCALEDIT_PATH.'template/style/';
+	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
+	$template_file = $dir.$user['template'].'/'.$file;
+	
+	if (file_exists($theme_file))
+	{
+		$template->assign(array( 'STYLE_FILE' => $theme_file ) );
+	}
+	elseif (file_exists($template_file))
+	{
+		$template->assign(array( 'STYLE_FILE' => $template_file ) );
+	}
+	else
+	{
+		$template->assign(array( 'STYLE_FILE' => $dir.$conf_lecteur[9] ) );
+	}
+}
+else
+{
+	$template->assign(array( 'STYLE_FILE' => $dir.$conf_lecteur[9] ) );
+}
+if ($conf_lecteur[10]=='true')
+{
+
+	$file = 'lecteur.conf.php';
+	$dir = LOCALEDIT_PATH.'template/style/';
+	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
+	$template_file = $dir.$user['template'].'/'.$file;
+	
+	if (file_exists($theme_file))
+	{
+		include($theme_file);
+	}
+	elseif (file_exists($template_file))
+	{
+		include($template_file) ;
+	}
+	else
+	{
+		$name = explode('.', $conf_lecteur[9]);
+		include_once($dir.$name[0].'.conf.php');
+	}
+}
+else
+{
+	$name = explode('.', $conf_lecteur[9]);
+	include_once($dir.$name[0].'.conf.php');
+}
+
+
+
+// +-----------------------------------------------------------------------+
 // |                         Configuration du lecteur                      |
 // +-----------------------------------------------------------------------+
 
-$conf_lecteur = explode("," , $conf['mp_lecteur']);
 
 if ($conf_lecteur[5]=='true') $shuffle=$conf_lecteur[5]; else $shuffle="false";
 if ($conf_lecteur[6]=='true') $repeat=$conf_lecteur[6]; else $repeat="list";
@@ -151,6 +209,9 @@ $template->assign(
       'AUTOSTART' => $autostart,
       'URL' => $url,
       'AUTOSCROLL' => $autoscroll,
+      'BACK_COLOR' => $BACK_COLOR,
+      'FRONT_COLOR' => $FRONT_COLOR,
+      'LIGHT_COLOR' => $LIGHT_COLOR,
     )
   );
 

@@ -36,7 +36,7 @@ class Musicplayer
 	$conf_plugin = explode("," , $conf['mp_plugin']);
  	 if (isset($conf_plugin)) {
 		$template->concat( 'PLUGIN_INDEX_ACTIONS',
-		  '<li><a href="javascript:void(0)" onClick="window.open(\''.get_root_url().'plugins/'.$this->plugin_name.'/lecteur.php\',\'musique\',\'width='.$conf_plugin[4].',height='.$conf_plugin[3].',top=400,left=400,menubar=no,resizable=yes,toolbar=no,status=no,alwaysRaised=yes\')" ><img src="'.get_root_url().'plugins/'.$this->plugin_name.'/template/icon/icon32.png" alt="Music Player" title="Play Music" class="button" /></a></li>');
+		  '<li><a href="javascript:void(0)" onClick="window.open(\''.get_root_url().'plugins/'.$this->plugin_name.'/lecteur.php\',\'musique\',\'width='.$conf_plugin[4].',height='.$conf_plugin[3].',top=400,left=400,toolbar=no,location=no,menubar=no,resizable=yes,status=no,alwaysRaised=yes\')" ><img src="'.get_root_url().'plugins/'.$this->plugin_name.'/template/icon/icon32.png" alt="Music Player" title="Play Music" class="button" /></a></li>');
 	  }
   }
 
@@ -58,7 +58,7 @@ class Musicplayer
 	
 	    array_splice($block->data, $position-1, 0, array('mp' =>
 	      array(
-	        'URL' => 'javascript:void(0)'.'onClick="window.open(\''.get_root_url().'plugins/'.$this->plugin_name.'/lecteur.php\',\'musique\',\'width='.$conf_plugin[4].',height='.$conf_plugin[3].',top=400,left=400,menubar=no,resizable=yes,toolbar=no,status=no,alwaysRaised=yes\')" ',
+	        'URL' => 'javascript:void(0)'.'onClick="window.open(\''.get_root_url().'plugins/'.$this->plugin_name.'/lecteur.php\',\'musique\',\'width='.$conf_plugin[4].',height='.$conf_plugin[3].',top=400,left=400,toolbar=no,location=no,menubar=no,resizable=yes,status=no,alwaysRaised=yes\')" ',
 	        'TITLE' => l10n('lien_expl'),
 	        'NAME' => l10n('lien_titre')
 	        )

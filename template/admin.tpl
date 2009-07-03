@@ -79,6 +79,17 @@
       <input name="h" type="text" size="5" {$MP_H} />
       px <br />
       {'mp_admin_3_opt2_2'|@translate}</li>
+	<li>
+       {'mp_admin_3_opt9'|@translate}<br />
+       <select name="style">
+        {foreach from=$list_style item=ls}
+        <option value="{$ls.FILE}">{$ls.TEXTE}</option>
+        {/foreach}
+      </select>
+      <br />
+      <input type="checkbox" name="various_style" value="true" {$MP_VARIOUS_STYLE} />
+      {'mp_admin_3_opt10'|@translate}<br />
+    </li>
     <li>
       <input type="checkbox" name="mp_miniature" value="true" {$MP_MINIATURE_ACTIVATED} />
       {'mp_admin_3_opt3_1'|@translate}</li>

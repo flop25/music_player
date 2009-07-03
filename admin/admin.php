@@ -5,15 +5,10 @@ $m_p = get_plugin_data('music_player');
 
 global $conf, $template, $lang, $page;
 global $prefixeTable;
-//include(get_language_filepath('plugin.lang.php', $m_p->plugin_path));
-	load_language('plugin.lang', $m_p->plugin_path);
+load_language('plugin.lang', $m_p->plugin_path);
 
 $page['infos'] = array();
 
-/*$template->assign_vars(
-  array(
-    'PLUGIN_PATH' => $m_p->plugin_path
-    )); */
 $template->assign(array(
 	'PLUGIN_PATH' 			=> $m_p->plugin_path, 
 	));
@@ -370,6 +365,7 @@ $conf_lecteur = explode("," , $conf['mp_lecteur']);
 $conf_plugin = explode("," , $conf['mp_plugin']);
 
 ////envoi
+if (isset($_POST['envoi_config']) ){
 if ($_POST['envoi_config']=='lecteur')
 {
   
@@ -386,6 +382,8 @@ if ($_POST['envoi_config']=='lecteur')
       $_POST['mp_repeat'],
       $_POST['mp_autostart'],
       $_POST['mp_autoscroll'],
+      $_POST['style'],
+      $_POST['various_style'],
     );
   } 
   else
@@ -401,6 +399,8 @@ if ($_POST['envoi_config']=='lecteur')
       $_POST['mp_repeat'],
       $_POST['mp_autostart'],
       $_POST['mp_autoscroll'],
+      $_POST['style'],
+      $_POST['various_style'],
     );
   }    
   $newconf_lecteur = implode ("," , $conf_lecteur);
@@ -413,7 +413,7 @@ if ($_POST['envoi_config']=='lecteur')
         
 //  $mp_msgs[] = $lang['mp_msg_admin_5'];
 array_push($page['infos'], l10n('mp_msg_admin_5'));
-}
+}}
 if (isset($_POST['envoi_config']) ){
 if ($_POST['envoi_config']=='plugin' or isset($_POST['foot']))
 {
@@ -441,18 +441,70 @@ if ($conf_lecteur[3]=='true') $miniature=$check;
 if ($conf_lecteur[5]=='true') $shuffle=$check;
 if ($conf_lecteur[6]=='true') $repeat=$check;
 if ($conf_lecteur[8]=='true') $autoscroll=$check;
+if ($conf_lecteur[10]=='true') $various_style=$check;
 
 if ($conf_lecteur[7]!='0')
 {
-$rep = pwg_query('SELECT texte FROM '.MP_PLAYLIST.' WHERE id IN (\''.$conf_lecteur[7].'\') ;');
-$pl = mysql_fetch_array($rep);
-$txt=$pl['texte'];
+	$rep = pwg_query('SELECT texte FROM '.MP_PLAYLIST.' WHERE id IN (\''.$conf_lecteur[7].'\') ;');
+	$pl = mysql_fetch_array($rep);
+	$txt=$pl['texte'];
 }
 else {$txt="Defaut"; }
 
 if ($conf_plugin[0]=='true') $evidence=$check;
 if ($conf_plugin[1]=='true') $head=$check;
 if ($conf_plugin[2]=='true') $foot=$check;
+
+////////////////////////////////////////////////
+////////[ liste des styles globaux //////////
+////////////////////////////////////////////////
+	$fichier = array();
+	$dir = opendir('./plugins/music_player/template/style'); //ouvre le repertoire courant désigné par la variable
+     while(false!==($file = readdir($dir))){ //on lit tout et on récupere tout les dossiers dans $folder
+    
+     if(!in_array($file, array('.','..'))){ //on eleve le parent et le courant '. et ..'
+	  if(is_file($file)) { continue; }
+	  $page = $file; //sort l'extension du fichier
+      $page = explode('.', $page);
+      $nb = count($page);
+      $nom_fichier = $page[0];
+      for ($i = 1; $i < $nb-1; $i++){
+       $nom_fichier .= '.'.$page[$i];
+      }
+      if(isset($page[1])){
+       $ext_fichier = $page[$nb-1];
+      }
+      else {
+       $ext_fichier = '';
+      }
+    
+      if($ext_fichier == 'css') { //On ne prend que les css
+       array_push($fichier, $file);
+      }
+	 }//fin if in array
+     }//while
+    natcasesort($fichier); //la fonction natcasesort( ) est la fonction de tri standard sauf qu'elle ignore la casse
+    
+	
+	foreach($fichier as $file) {
+		if ($conf_lecteur[9]==$file)
+		{
+			
+			$template->append('list_style',
+				array('FILE' => $file,
+					  'TEXTE' => '->'.$file,
+					  ));
+		}
+		else
+		{
+			$template->append('list_style',
+			array('FILE' => $file,
+				  'TEXTE' => $file,
+				  ));
+		}
+	}
+
+
 ////assignement des valeurs
 $template->assign(
     array(
@@ -472,6 +524,7 @@ $template->assign(
       'AUTOSTART' => $conf_lecteur[7],
       'AUTOSTART_T' => $txt,
       'MP_AUTOSCROLL_ACTIVATED' => $autoscroll,
+      'MP_VARIOUS_STYLE' => $various_style,
     )
   );
 // +-----------------------------------------------------------------------+

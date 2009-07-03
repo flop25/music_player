@@ -1,4 +1,4 @@
-{html_head}<link rel="stylesheet" type="text/css" href="./template/lecteur.css">{/html_head}
+{html_head}<link rel="stylesheet" type="text/css" href="{$STYLE_FILE}">{/html_head}
 {html_head}<script type="text/javascript" src="./player/swfobject.js"></script>{/html_head}
 {html_head}<script type="text/javascript">
 {literal}
@@ -34,19 +34,30 @@ display:none;
 	  </style>{/literal}{/html_head}
 {/if}
 
-<div id="content">
+<div id="content" class="content">
 <div id="autre_content">
-<div id="montre" style="display:block" align="center">
-  <a href="javascript:void(0)" onclick="document.getElementById('montre').style.display ='none';document.getElementById('cache').style.display ='block'">{'mp_montre'|@translate}</a>
-</div>
-<div id="cache" style="display:none" align="center">
-  <a href="javascript:void(0)" onclick="document.getElementById('montre').style.display ='block';document.getElementById('cache').style.display ='none'">{'mp_cache'|@translate}</a><br />
-  <ul>
-  {foreach from=$playlist item=playlist}<!-- BEGIN playlist -->
-    <li><a href="javascript:void(0)" onclick="javascript:loadFile({literal}{{/literal}file:'{$playlist.URL}'{literal}}{/literal})" >{$playlist.TEXTE}</a></li>
-  {/foreach}<!-- END playlist -->
-  </ul>
-</div>
+  <table id="table_content" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td id="section_up_left">&nbsp;</td>
+      <td id="section_up"><a href="#" id="close_button" onclick="window.close();" title="{'Close this window'|@translate}"><img src="template/icon/exit.png" class="button" alt="close"></a></li></ul></td>
+      <td id="section_up_right">&nbsp;</td>
+    </tr>
+    <tr>
+      <td id="section_left">&nbsp;</td>
+      <td id="section_in">
+	<div class="titrePage">
+        <div id="montre" style="display:block" align="center">
+          <a href="javascript:void(0)" onclick="document.getElementById('montre').style.display ='none';document.getElementById('cache').style.display ='block'">{'mp_montre'|@translate}</a>
+        </div>
+        <div id="cache" style="display:none" align="center">
+          <a href="javascript:void(0)" onclick="document.getElementById('montre').style.display ='block';document.getElementById('cache').style.display ='none'">{'mp_cache'|@translate}</a><br />
+          <ul>
+          {foreach from=$playlist item=playlist}<!-- BEGIN playlist -->
+            <li><a href="javascript:void(0)" onclick="javascript:loadFile({literal}{{/literal}file:'{$playlist.URL}'{literal}}{/literal})" >{$playlist.TEXTE}</a></li>
+          {/foreach}<!-- END playlist -->
+          </ul>
+        </div>
+  </div>
 <p align="center" id="player">
 <script type="text/javascript">
 	var so = new SWFObject("player/mp3player.swf", "playlist", "{$L_TT}", "{$H_TT}", "7");
@@ -55,9 +66,9 @@ display:none;
 
 	so.addVariable("enablejs","true");
 	so.addVariable("javascriptid","playlist");
-	so.addVariable('backcolor','0x000000');
-	so.addVariable('frontcolor','0xffffff');
-	so.addVariable('lightcolor','0x0099CC');
+	so.addVariable('backcolor','{$BACK_COLOR}');
+	so.addVariable('frontcolor','{$FRONT_COLOR}');
+	so.addVariable('lightcolor','{$LIGHT_COLOR}');
 	so.addVariable('linktarget','_blank');
     so.addParam("allowfullscreen","true");
 	so.addParam("allowscriptaccess","always"); 
@@ -73,7 +84,15 @@ display:none;
 
 	so.write("player");
 </script></p>
-<p id="pageBottomActions"><a href="#" onclick="window.close();" title="{'Close this window'|@translate}"><img src="template/icon/exit.png" class="button" alt="close"></a></p>
+</td>
+	  <td id="section_right">&nbsp;</td>
+    </tr>
+    <tr>
+      <td id="section_bottom_left">&nbsp;</td>
+      <td id="section_bottom" >&nbsp;</td>
+      <td id="section_bottom_right" >&nbsp;</td>
+    </tr>
+  </table>
 </div>
 </div> <!-- the_page -->
 

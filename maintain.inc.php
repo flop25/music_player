@@ -44,7 +44,7 @@ PRIMARY KEY ( id )
     $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("mp_lecteur" , "148,300,128,true,128,false,list,0,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll");';
+	("mp_lecteur" , "148,300,128,true,128,false,list,0,true,lecteur.css,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thème");';
     pwg_query($q);
 
     $q = '
@@ -108,7 +108,7 @@ SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
     $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("mp_lecteur" , "148,300,128,true,128,false,list,0,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll");';
+	("mp_lecteur" , "148,300,128,true,128,false,list,0,true,lecteur.css,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thème");';
     pwg_query($q);
    } 
    else {
@@ -120,14 +120,14 @@ SELECT value FROM '.CONFIG_TABLE.'
    $conf=explode(',', $data_conf['value']);
    $nbr=count($conf);
    
-     if ($nbr!=9)
+     if ($nbr!=11)
      {
       pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'mp_lecteur\')');
       pwg_query($q);
 	  $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("mp_lecteur" , "148,300,128,true,128,false,list,0,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll");';
+	("mp_lecteur" , "148,300,128,true,128,false,list,0,true,lecteur.css,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thème");';
       pwg_query($q);
      }
    }
