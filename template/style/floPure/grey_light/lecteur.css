@@ -3,8 +3,7 @@
 width:100%;
 padding:0;
 margin:0;
-text-align:left;
-  }
+}
 #content
 {
 margin-left: auto;
@@ -20,7 +19,6 @@ border:none;
 body {
 min-width: inherit;
 width:100%;
-padding:10px;
 }
 #cache
 {
@@ -28,8 +26,8 @@ padding:5px
 }
 #close_button
 {
-	margin-right:10px;
-	margin-left:90%;
+	display:block;
+	float:right;
 }
 #table_content
 {
@@ -44,4 +42,14 @@ padding:5px
 {
 	text-decoration:none;
 	border:none;
+}
+#copyright {
+margin-left:5%;
+margin-right:5%;
+}
+
+/* backgrounds */
+#autre_content, #content, .content
+{
+	background:none;
 }

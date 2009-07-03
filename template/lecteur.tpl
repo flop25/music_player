@@ -39,7 +39,7 @@ display:none;
   <table id="table_content" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td id="section_up_left">&nbsp;</td>
-      <td id="section_up"><a href="#" id="close_button" onclick="window.close();" title="{'Close this window'|@translate}"><img src="template/icon/exit.png" class="button" alt="close"></a></li></ul></td>
+      <td id="section_up">&nbsp;</td>
       <td id="section_up_right">&nbsp;</td>
     </tr>
     <tr>
@@ -58,7 +58,8 @@ display:none;
           </ul>
         </div>
   </div>
-<p align="center" id="player">
+  <div id="close_button"><a href="#" onclick="window.close();" title="{'Close this window'|@translate}"><img src="template/icon/exit.png" class="button" alt="close"></a></div>
+  <div align="center" id="player">
 <script type="text/javascript">
 	var so = new SWFObject("player/mp3player.swf", "playlist", "{$L_TT}", "{$H_TT}", "7");
 	so.addVariable("file","{$URL}");
@@ -83,7 +84,7 @@ display:none;
 		
 
 	so.write("player");
-</script></p>
+</script></div>
 </td>
 	  <td id="section_right">&nbsp;</td>
     </tr>
