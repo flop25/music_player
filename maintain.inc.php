@@ -50,7 +50,7 @@ INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
     $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("mp_plugin" , "true,true,false,400,500" , "Plugin music_player : evidence, header, footer, hauteur, largeur");';
+	("mp_plugin" , "true,false,false,260,400" , "Plugin music_player : evidence, header, footer, hauteur, largeur");';
     pwg_query($q);
 }
 
@@ -144,7 +144,7 @@ SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
     $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("mp_plugin" , "true,true,false,400,500" , "Plugin music_player : evidence, header, footer, hauteur, largeur");';
+	("mp_plugin" , "true,false,false,260,400" , "Plugin music_player : evidence, header, footer, hauteur, largeur");';
     pwg_query($q);
   } 
    else {
@@ -163,7 +163,7 @@ SELECT value FROM '.CONFIG_TABLE.'
       $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("mp_plugin" , "true,true,false,400,500" , "Plugin music_player : evidence, header, footer, hauteur, largeur");';
+	("mp_plugin" , "true,false,false,260,400" , "Plugin music_player : evidence, header, footer, hauteur, largeur");';
       pwg_query($q);
      }
    }

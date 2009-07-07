@@ -11,6 +11,7 @@
 	margin-bottom:1em;
 	width:100%;
 	border:none;
+	min-height:inherit;
   }
 #the_page
 {

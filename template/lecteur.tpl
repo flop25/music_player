@@ -38,12 +38,12 @@ display:none;
 <div id="autre_content">
   <table id="table_content" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td id="section_up_left">&nbsp;</td>
-      <td id="section_up">&nbsp;</td>
-      <td id="section_up_right">&nbsp;</td>
+      <td id="section_up_left"></td>
+      <td id="section_up"></td>
+      <td id="section_up_right"></td>
     </tr>
     <tr>
-      <td id="section_left">&nbsp;</td>
+      <td id="section_left"></td>
       <td id="section_in">
 	<div class="titrePage">
         <div id="montre" style="display:block" align="center">
@@ -86,12 +86,12 @@ display:none;
 	so.write("player");
 </script></div>
 </td>
-	  <td id="section_right">&nbsp;</td>
+	  <td id="section_right"></td>
     </tr>
     <tr>
-      <td id="section_bottom_left">&nbsp;</td>
-      <td id="section_bottom" >&nbsp;</td>
-      <td id="section_bottom_right" >&nbsp;</td>
+      <td id="section_bottom_left"></td>
+      <td id="section_bottom" ></td>
+      <td id="section_bottom_right" ></td>
     </tr>
   </table>
 </div>
