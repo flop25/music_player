@@ -215,7 +215,36 @@ $template->assign(
     )
   );
 
-$template->set_filename('lecteur', $m_p->plugin_path.'template/lecteur.tpl');
+if ($conf_lecteur[10]=='true')
+{
+
+	$file = 'lecteur.tpl';
+	$dir = LOCALEDIT_PATH.'template/style/';
+	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
+	$template_file = $dir.$user['template'].'/'.$file;
+	
+	if (file_exists($theme_file))
+	{
+		$template->set_filename('lecteur', $theme_file);
+	}
+	elseif (file_exists($template_file))
+	{
+		$template->set_filename('lecteur', $template_file);
+	}
+	else
+	{
+		$name = explode('.', $conf_lecteur[9]);
+		$template->set_filename('lecteur', $dir.$name[0].'.tpl');
+	}
+}
+else
+{
+	$name = explode('.', $conf_lecteur[9]);
+	$template->set_filename('lecteur', $dir.$name[0].'.tpl');
+
+}
+
+
 
 // +-----------------------------------------------------------------------+
 // | html code display                                                     |

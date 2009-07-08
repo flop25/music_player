@@ -158,7 +158,7 @@ if ( theLecteur.location.toString()=="about:blank" || !theLecteur.location.toStr
   function add_css()
 {
   global $page, $template;
-  if (isset($page['body_id']) and $page['body_id']=='theAdminPage' and ($_GET['section']=='music_player/admin/admin.php' or $_GET['section']=='music_player/admin/help.php' or $_GET['section']=='music_player/admin/admin_edit.php') )
+  if (isset($page['body_id']) and isset($_GET['section']) and $page['body_id']=='theAdminPage' and ($_GET['section']=='music_player/admin/admin.php' or $_GET['section']=='music_player/admin/help.php' or $_GET['section']=='music_player/admin/admin_edit.php') )
   {
       $template -> assign(
         'head_element', array (

@@ -87,20 +87,12 @@ if (isset($_POST['envoi']) and $_POST['envoi'] == "synchro")
           'NBR' => $n,
 		  ));
 
-/*   $template->assign_block_vars('syn',
-    array('RESULT' => $value,
-          'RESULT_M' => $fichier,//Ne sert que pour avoir un aperçu
-          'NBR' => $n,
-		  ));*/
 
  }//foreach  
 
 if ($n ==0)
 {
-  //$mp_msgs[] = $lang['mp_msg_admin1'];
   array_push($page['infos'], l10n('mp_msg_admin1'));
-
-
 }
 else
 {
@@ -506,27 +498,29 @@ if ($conf_plugin[2]=='true') $foot=$check;
 
 
 ////assignement des valeurs
-$template->assign(
-    array(
-      'MP_EVIDENCE' => $evidence,
-      'MP_HEAD' => $head,
-      'MP_FOOT' => $foot,
-      'MP_H_POP' => 'value="'.$conf_plugin[3].'"',
-      'MP_L_POP' => 'value="'.$conf_plugin[4].'"',
-	  
-      'MP_H_TT' => 'value="'.$conf_lecteur[0].'"',
-      'MP_L_TT' => 'value="'.$conf_lecteur[1].'"',
-      'MP_H' => 'value="'.$conf_lecteur[2].'"',
-      'MP_MINIATURE_ACTIVATED' =>   $miniature,
-      'MP_L' => 'value="'.$conf_lecteur[4].'"',
-      'MP_SHUFFLE_ACTIVATED' => $shuffle,
-      'MP_REPEAT_ACTIVATED' => $repeat,
-      'AUTOSTART' => $conf_lecteur[7],
-      'AUTOSTART_T' => $txt,
-      'MP_AUTOSCROLL_ACTIVATED' => $autoscroll,
-      'MP_VARIOUS_STYLE' => $various_style,
-    )
-  );
+if (isset($foot) and isset($head) and isset($shuffle) and isset($repeat)){
+	$template->assign(
+		array(
+		  'MP_EVIDENCE' => $evidence,
+		  'MP_HEAD' => $head,
+		  'MP_FOOT' => $foot,
+		  'MP_H_POP' => 'value="'.$conf_plugin[3].'"',
+		  'MP_L_POP' => 'value="'.$conf_plugin[4].'"',
+		  
+		  'MP_H_TT' => 'value="'.$conf_lecteur[0].'"',
+		  'MP_L_TT' => 'value="'.$conf_lecteur[1].'"',
+		  'MP_H' => 'value="'.$conf_lecteur[2].'"',
+		  'MP_MINIATURE_ACTIVATED' =>   $miniature,
+		  'MP_L' => 'value="'.$conf_lecteur[4].'"',
+		  'MP_SHUFFLE_ACTIVATED' => $shuffle,
+		  'MP_REPEAT_ACTIVATED' => $repeat,
+		  'AUTOSTART' => $conf_lecteur[7],
+		  'AUTOSTART_T' => $txt,
+		  'MP_AUTOSCROLL_ACTIVATED' => $autoscroll,
+		  'MP_VARIOUS_STYLE' => $various_style,
+		)
+	  );
+}
 // +-----------------------------------------------------------------------+
 // |               affichage des msg                                       |
 // +-----------------------------------------------------------------------+
