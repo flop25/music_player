@@ -1,0 +1,162 @@
+#autre_content
+{
+	width:100%;
+	padding:0;
+	margin:0;
+	text-align:left;
+  }
+#content
+{
+	margin-left: auto;
+	margin-bottom:1em;
+	width:100%;
+	border:none;
+  }
+#the_page
+{
+	width:100%;
+	border:none;
+}
+body {
+	min-width: inherit;
+	width:100%;
+	padding:0px;
+}
+A {
+	color:#FFF;
+	display:block;
+	border:none;
+	width:auto;
+	padding:3px;
+}
+A:hover {
+	color:#000;
+	border:none;
+	background-color:#CCC;
+}
+#cache
+{
+	padding:5px
+}
+#cache LI
+{
+	display:block;
+	list-style-type:none;
+	border:#333 solid 1px;
+	width: auto;
+	float:left;
+	padding:2px;
+	margin:10px;
+}
+#cache LI:hover
+{
+	border: #FFF solid 1px;
+	background-color:#CCC;
+}
+#cache LI A
+{
+	color:#FFF;
+	display:block;
+	font:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border:none;
+}
+
+#close_button
+{
+	margin-right:10px;
+	margin-left:90%;
+}
+#table_content
+{
+	margin:auto;
+}
+#section_up
+{
+	padding-top:5px;
+	text-align:right;
+}
+#section_up A
+{
+	text-decoration:none;
+	border:none;
+}
+
+/* backgrounds */
+#autre_content, .content, #the_page
+{
+	background:none!important;
+}
+body
+{
+	background-color:#8b8b8b;
+	background-image:none;
+	
+}
+#section_up_right {
+ background-image: url(content_top_right.png);
+ background-repeat:no-repeat;
+ background-position:left bottom;
+ width:55px;
+ height:90px;
+}
+#section_up_left {
+ background-image: url(content_top_left.png);
+  background-position:right bottom;
+  background-repeat:no-repeat;
+ width:55px;
+ height:90px;
+}
+#section_up {
+ background-image: url(content_top.png);
+   background-position:bottom;
+   background-repeat: repeat-x;
+   height:55px;
+}
+
+#section_in {
+	background-color:#000;
+}
+#section_right {
+	background-image: url(content_right.png);
+	background-repeat: repeat-y;
+	background-position:left;
+ width:50px;
+}
+#section_left {
+	background-image: url(content_left.png);
+	background-repeat: repeat-y;
+	background-position:right;
+ width:55px;
+}
+#section_bottom_right {
+ background-image: url(content_bot_right.png);
+ background-position:left top;
+ background-repeat:no-repeat;
+ width:50px;
+ height:90px;
+}
+#section_bottom_left {
+ background-image: url(content_bot_left.png);
+ background-position:right top;
+ background-repeat:no-repeat;
+ width:55px;
+ height:90px;
+}
+#section_bottom {
+ background-image: url(content_bot.png);
+ background-position:top;
+   background-repeat: repeat-x;
+  height:90px;
+  text-align:right;
+  color:#333;
+  font-size:9px;
+}
+#section_bottom A {
+  color:#333;
+  font-size:9px;
+}
+#section_bottom A:hover {
+  color:#fff;
+  font-size:10px;
+}
+

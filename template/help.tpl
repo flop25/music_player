@@ -14,7 +14,7 @@
     <li><a href="#q5">{'mp_help_q5'|@translate}</a></li>
     <li><a href="#q6">{'mp_help_q6'|@translate}</a></li>
     <li><a href="#q7">{'mp_help_q7'|@translate}</a></li>
-    <li><a href="#q">{'mp_help_q8'|@translate}</a></li>
+    <li><a href="#q8">{'mp_help_q8'|@translate}</a></li>
    </ul>
   </dd>
 </dl>

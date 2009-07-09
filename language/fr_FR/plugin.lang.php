@@ -28,14 +28,14 @@ $lang['mp_help_div4'] = "Le plugin permet de créer et gérer des playlist, de p
 pour créer une playlist :
 <br />- Tout d'abord assurez-vous que vous avez bien un dossier /music dans le répertoire du plugin. IMPORTANT !! (utilisateur de Free vous n'êtes pas concernés par la mention qui suit) Le dossier /music doit avoir touts les autorisations en écriture/lecture, en d'autre termes, un chmod de 777 ou rwxrwxrwx.
 <br />- Ensuite, vous créez un dossier dans ce dossier /music qui contiendra les mp3 et surtout la playlist en .xml. Attention : le nom du dossier est primordial : DONC EVITER LES CARATERES SPECIAUX ET GUILLEMETS dans le nom des dossiers
-<br />- on clique sur 'Synchroniser avec le dossier /music' : les dossiers dans music sont listés ainsi que les fichiers mp3 contenus dans chacuns d'eux. Les playlists au foramt xml sont créés en ayant pour nom celui du dossier.
+<br />- on clique sur 'Synchroniser avec le dossier /music' : les dossiers dans music sont listés ainsi que les fichiers mp3 contenus dans chacuns d'eux. Les playlists au format xml sont créés en ayant pour nom celui du dossier.
 <br />- réception du formulaire : il sert à avoir un petit texte descriptif qui servira de lien pour jouer la playlist, dans la fenêtre du lecteur. Laissez vide un champ texte et la playlsit concernée ne sera pas enregistrée en base de données
-<br />- envoi du formulaire et enregistrement en base de données : ensuite vous pouvez rajouter une miniature par upload ou lien : vous piuvez même directement l'envoyer par ftp avec pour nom '[nom du dossier].jpg'
+<br />- envoi du formulaire et enregistrement en base de données : ensuite vous pouvez rajouter une miniature par upload ou lien : vous pouvez même directement l'envoyer par ftp avec pour nom '[nom du dossier].jpg'
 <br /><br />
 pour gérer une playlist :
 <br />- cliquez sur la 2° icône à coté de la playlist
 <br />- Ensuite suivez les étapes : n'oubliez pas la dernière !";
-$lang['mp_help_div5'] = "Oui : pour celà rendez-vous dans la playlist de votre choix et, à l'étape 2, ajoutez votre fichier. Attention : même si le mp3 est sur le même serveur que ce plugin, il faut une url complète avec http://";
+$lang['mp_help_div5'] = "Pour celà rendez-vous dans la playlist de votre choix et, à l'étape 2, ajoutez votre fichier. Attention : même si le mp3 est sur le même serveur que ce plugin, il faut une url complète avec http://";
 $lang['mp_help_div6'] = "Oui : depuis la 1.3 un block pour podcast et playlist distante a été ajouté. Attention : la playlist doit être au format Atom, Xspf (utilisé par le plugin), ou RSS. (Les podcast sont tous des RSS)";
 $lang['mp_help_div7'] = 'Le support du plugin s\'effectue ici : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781</a>';
 $lang['mp_help_div8'] = "Nouveau : vous pouvez restreindre les droits d'écoute. En effet, si vous créer le groupe 'music_group', seul les utilisateurs appartenant à ce groupe pourront lire la musique. S'il n'est pas créé (cas par défaut), tout le monde peut accéder au lecteur";
@@ -70,6 +70,9 @@ $lang['mp_admin_3_opt4'] = 'Lire aléatoirement la musique';
 $lang['mp_admin_3_opt5'] = 'Répéter la playlist une fois celle-ci terminée';
 $lang['mp_admin_3_opt6'] = 'Lire cette playlist au lancement';
 $lang['mp_admin_3_opt7'] = "Défilement automatiquement de la playlist (pas d'ascenseur)";
+$lang['mp_admin_3_opt9'] = "Thème appliqué par défaut : ";
+$lang['mp_admin_3_opt9b'] = "ne pas changer";
+$lang['mp_admin_3_opt10'] = "Activer la gestion automatique des styles : le thème appliqué au lecteur sera celui de l'utilisateur. Si cette option est désactivée ou si le thème de l'utilisateur n'existe pas pour le lecteur, alors le thème appliqué est celui par défaut précédent";
 
 
 $lang['mp_adm_envoi_1'] = 'Description de';

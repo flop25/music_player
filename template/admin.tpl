@@ -82,6 +82,7 @@
 	<li>
        {'mp_admin_3_opt9'|@translate}<br />
        <select name="style">
+        <option value="NULL">{'mp_admin_3_opt9b'|@translate}</option>
         {foreach from=$list_style item=ls}
         <option value="{$ls.FILE}">{$ls.TEXTE}</option>
         {/foreach}

@@ -20,7 +20,7 @@ $lang['mp_help_q4'] = "How does this plugin work ?";
 $lang['mp_help_q5'] = "How can i added distant mp3 or localised in others folders ?";
 $lang['mp_help_q6'] = "It's possible to add podcats ?";
 $lang['mp_help_q7'] = "I can't find answers here / I have some problemes";
-$lang['mp_help_q7'] = "New : you can restric the acces of the player";
+$lang['mp_help_q8'] = "New : you can restric the acces of the player";
 
 $lang['mp_help_div1'] = "Mp3 must be put into Music folder of the plugin like this \"[PWG folder]/plugins/music_player/music/[new playlist]/\". You should make your playlists order by artist (music/moby/go.pm3), or put artist's mane directly into file name (music/electro/moby-go.pm3)";
 $lang['mp_help_div2'] = "You do not update your playlist : So click on 2nd icon ('Manage music') near the playlist, then in final step, do 'Submit modifications'";
@@ -71,6 +71,10 @@ $lang['mp_admin_3_opt4'] = 'Read music randomly';
 $lang['mp_admin_3_opt5'] = 'Repeat playlist when is finished';
 $lang['mp_admin_3_opt6'] = 'Read this playslit at the beginning';
 $lang['mp_admin_3_opt7'] = "Run automatically of the playlist (no sidebar)";
+$lang['mp_admin_3_opt9'] = "Style applied by default :  ";
+$lang['mp_admin_3_opt9b'] = "do not change";
+$lang['mp_admin_3_opt10'] = "Activate the automatic management of the styles: the styles applied to the player will be the one of the user. If this option is deactivated or if the style of the user does not exist for the player, then the subject applied is the one by default, the precedent";
+
 
 
 $lang['mp_adm_envoi_1'] = 'Description of';

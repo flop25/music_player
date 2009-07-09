@@ -123,31 +123,6 @@ $conf_lecteur = explode("," , $conf['mp_lecteur']);
 
 if ($conf_lecteur[10]=='true')
 {
-	$file = 'lecteur.css';
-	$dir = LOCALEDIT_PATH.'template/style/';
-	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
-	$template_file = $dir.$user['template'].'/'.$file;
-	
-	if (file_exists($theme_file))
-	{
-		$template->assign(array( 'STYLE_FILE' => $theme_file ) );
-	}
-	elseif (file_exists($template_file))
-	{
-		$template->assign(array( 'STYLE_FILE' => $template_file ) );
-	}
-	else
-	{
-		$template->assign(array( 'STYLE_FILE' => $dir.$conf_lecteur[9] ) );
-	}
-}
-else
-{
-	$template->assign(array( 'STYLE_FILE' => $dir.$conf_lecteur[9] ) );
-}
-if ($conf_lecteur[10]=='true')
-{
-
 	$file = 'lecteur.conf.php';
 	$dir = LOCALEDIT_PATH.'template/style/';
 	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
@@ -163,17 +138,15 @@ if ($conf_lecteur[10]=='true')
 	}
 	else
 	{
-		$name = explode('.', $conf_lecteur[9]);
-		include_once($dir.$name[0].'.conf.php');
+		include_once($conf_lecteur[9]);
 	}
 }
 else
 {
-	$name = explode('.', $conf_lecteur[9]);
-	include_once($dir.$name[0].'.conf.php');
+	include_once($conf_lecteur[9]);
 }
 
-
+$template->assign(array( 'STYLE_FILE' => $STYLE_FILE ) );
 
 // +-----------------------------------------------------------------------+
 // |                         Configuration du lecteur                      |
@@ -215,36 +188,7 @@ $template->assign(
     )
   );
 
-if ($conf_lecteur[10]=='true')
-{
-
-	$file = 'lecteur.tpl';
-	$dir = LOCALEDIT_PATH.'template/style/';
-	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
-	$template_file = $dir.$user['template'].'/'.$file;
-	
-	if (file_exists($theme_file))
-	{
-		$template->set_filename('lecteur', $theme_file);
-	}
-	elseif (file_exists($template_file))
-	{
-		$template->set_filename('lecteur', $template_file);
-	}
-	else
-	{
-		$name = explode('.', $conf_lecteur[9]);
-		$template->set_filename('lecteur', $dir.$name[0].'.tpl');
-	}
-}
-else
-{
-	$name = explode('.', $conf_lecteur[9]);
-	$template->set_filename('lecteur', $dir.$name[0].'.tpl');
-
-}
-
-
+$template->set_filename('lecteur', $TPL_FILE);
 
 // +-----------------------------------------------------------------------+
 // | html code display                                                     |

@@ -360,7 +360,14 @@ $conf_plugin = explode("," , $conf['mp_plugin']);
 if (isset($_POST['envoi_config']) ){
 if ($_POST['envoi_config']=='lecteur')
 {
-  
+  if ($_POST['style']=='NULL')
+  {
+	  $style=$conf_lecteur['9'];
+  }
+  else
+  {
+	  $style=$_POST['style'];
+  }
   
   if ($_POST['mp_miniature']=="true")
   {  
@@ -374,7 +381,7 @@ if ($_POST['envoi_config']=='lecteur')
       $_POST['mp_repeat'],
       $_POST['mp_autostart'],
       $_POST['mp_autoscroll'],
-      $_POST['style'],
+      $style,
       $_POST['various_style'],
     );
   } 
@@ -391,7 +398,7 @@ if ($_POST['envoi_config']=='lecteur')
       $_POST['mp_repeat'],
       $_POST['mp_autostart'],
       $_POST['mp_autoscroll'],
-      $_POST['style'],
+      $style,
       $_POST['various_style'],
     );
   }    
@@ -429,11 +436,11 @@ if ($_POST['envoi_config']=='plugin' or isset($_POST['foot']))
 }}
 
 $check='checked="checked"';
-if ($conf_lecteur[3]=='true') $miniature=$check;
-if ($conf_lecteur[5]=='true') $shuffle=$check;
-if ($conf_lecteur[6]=='true') $repeat=$check;
-if ($conf_lecteur[8]=='true') $autoscroll=$check;
-if ($conf_lecteur[10]=='true') $various_style=$check;
+if ($conf_lecteur[3]=='true') { $miniature=$check; } else { $miniature=NULL; } 
+if ($conf_lecteur[5]=='true') { $shuffle=$check; } else { $shuffle=NULL; }
+if ($conf_lecteur[6]=='true') { $repeat=$check; } else { $repeat=NULL; }
+if ($conf_lecteur[8]=='true') { $autoscroll=$check; } else { $autoscroll=NULL; }
+if ($conf_lecteur[10]=='true') { $various_style=$check; } else { $various_style=NULL; }
 
 if ($conf_lecteur[7]!='0')
 {
@@ -443,14 +450,14 @@ if ($conf_lecteur[7]!='0')
 }
 else {$txt="Defaut"; }
 
-if ($conf_plugin[0]=='true') $evidence=$check;
-if ($conf_plugin[1]=='true') $head=$check;
-if ($conf_plugin[2]=='true') $foot=$check;
+if ($conf_plugin[0]=='true') { $evidence=$check; } else { $evidence=NULL; }
+if ($conf_plugin[1]=='true') { $head=$check; } else { $head=NULL; }
+if ($conf_plugin[2]=='true') { $foot=$check; } else { $foot=NULL; }
 
 ////////////////////////////////////////////////
 ////////[ liste des styles globaux //////////
 ////////////////////////////////////////////////
-	$fichier = array();
+	/*$fichier = array();
 	$dir = opendir('./plugins/music_player/template/style'); //ouvre le repertoire courant désigné par la variable
      while(false!==($file = readdir($dir))){ //on lit tout et on récupere tout les dossiers dans $folder
     
@@ -477,28 +484,62 @@ if ($conf_plugin[2]=='true') $foot=$check;
      }//while
     natcasesort($fichier); //la fonction natcasesort( ) est la fonction de tri standard sauf qu'elle ignore la casse
     
-	
-	foreach($fichier as $file) {
-		if ($conf_lecteur[9]==$file)
-		{
+	*/
+
+function recursive_readdir ($dir) {
+	global $conf, $template;
+	$conf_lecteur = explode("," , $conf['mp_lecteur']);
+	$dh = opendir ($dir); // on l'ouvre
+	while (($file = readdir ($dh)) !== false ) { //boucle pour parcourir le repertoire 
+		if ($file !== '.' && $file !== '..') { // no comment
+			$path =$dir.'/'.$file; // construction d'un joli chemin...
+			if (is_dir ($path)) { //si on tombe sur un sous-repertoire 
+				//echo '<p style="font-weight: bold; border : 1pt solid #000000;">', $path, ' -> dir</p>'; // ptit style...
+				recursive_readdir ($path); // appel recursif pour lire a l'interieur de ce sous-repertoire
+			}
+			else
+			{
+				//echo $path, '<br />'; // si il s'agit d'un fichier, on affiche, tout simplement.
+			  $page = explode('.', $file);
+			  $nb = count($page);
+			  $nom_fichier = $page[0];
+			  for ($i = 1; $i < $nb-1; $i++){
+			   $nom_fichier .= '.'.$page[$i];
+			  }
+			  if(isset($page[1])){
+			   $ext_fichier = $page[$nb-2].'.'.$page[$nb-1];
+			  }
+			  else {
+			   $ext_fichier = '';
+			  }
 			
-			$template->append('list_style',
-				array('FILE' => $file,
-					  'TEXTE' => '->'.$file,
-					  ));
-		}
-		else
-		{
-			$template->append('list_style',
-			array('FILE' => $file,
-				  'TEXTE' => $file,
-				  ));
+			  if($ext_fichier == 'conf.php') { //On ne prend que les css
+				  $path = str_replace("/plugins/music_player", "", $path);
+				  if ($conf_lecteur[9]==$path)
+				  {
+					  $template->append('list_style',
+						  array('FILE' => $path,
+								'TEXTE' => ' --> '.$path,
+								));
+				  }
+				  else
+				  {
+					  $template->append('list_style',
+					  array('FILE' => $path,
+							'TEXTE' => $path,
+							));
+				  }
+			  }
+			}
 		}
 	}
+	closedir ($dh); // on ferme le repertoire courant
+}	
+recursive_readdir ('./plugins/music_player/template/style');
+	
 
 
 ////assignement des valeurs
-if (isset($foot) and isset($head) and isset($shuffle) and isset($repeat)){
 	$template->assign(
 		array(
 		  'MP_EVIDENCE' => $evidence,
@@ -520,7 +561,7 @@ if (isset($foot) and isset($head) and isset($shuffle) and isset($repeat)){
 		  'MP_VARIOUS_STYLE' => $various_style,
 		)
 	  );
-}
+
 // +-----------------------------------------------------------------------+
 // |               affichage des msg                                       |
 // +-----------------------------------------------------------------------+
