@@ -175,6 +175,7 @@ $template->assign(
     array(
       'H_TT' => $conf_lecteur[0],
       'L_TT' => $conf_lecteur[1],
+//      'L_TABLE' => $conf_lecteur[1]+125,
       'H' => $conf_lecteur[2],
       'L' => $conf_lecteur[4],
       'SHUFFLE' => $shuffle,

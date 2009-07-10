@@ -22,21 +22,18 @@ body {
 	width:100%;
 	padding:0px;
 }
-A {
+#cache A, #montre A {
 	color:#FFF;
 	display:block;
 	border:none;
-	width:auto;
+	width:200px;
 	padding:3px;
+	max-width:400px;
 }
-A:hover {
+#cache A:hover, #montre A:hover {
 	color:#000;
 	border:none;
 	background-color:#CCC;
-}
-#cache
-{
-	padding:5px
 }
 #cache LI
 {
@@ -59,6 +56,7 @@ A:hover {
 	display:block;
 	font:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 	border:none;
+	width:auto;
 }
 
 #close_button
@@ -69,6 +67,11 @@ A:hover {
 #table_content
 {
 	margin:auto;
+	max-width:500px;
+	width:100%;
+border:0;
+padding:0;
+margin:0;
 }
 #section_up
 {

@@ -46,3 +46,8 @@ body {
 	text-decoration:none;
 	border:none;
 }
+/* backgrounds */
+#autre_content, #content, .content, #the_page
+{
+	background:none!important;
+}

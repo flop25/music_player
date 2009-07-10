@@ -457,34 +457,6 @@ if ($conf_plugin[2]=='true') { $foot=$check; } else { $foot=NULL; }
 ////////////////////////////////////////////////
 ////////[ liste des styles globaux //////////
 ////////////////////////////////////////////////
-	/*$fichier = array();
-	$dir = opendir('./plugins/music_player/template/style'); //ouvre le repertoire courant désigné par la variable
-     while(false!==($file = readdir($dir))){ //on lit tout et on récupere tout les dossiers dans $folder
-    
-     if(!in_array($file, array('.','..'))){ //on eleve le parent et le courant '. et ..'
-	  if(is_file($file)) { continue; }
-	  $page = $file; //sort l'extension du fichier
-      $page = explode('.', $page);
-      $nb = count($page);
-      $nom_fichier = $page[0];
-      for ($i = 1; $i < $nb-1; $i++){
-       $nom_fichier .= '.'.$page[$i];
-      }
-      if(isset($page[1])){
-       $ext_fichier = $page[$nb-1];
-      }
-      else {
-       $ext_fichier = '';
-      }
-    
-      if($ext_fichier == 'css') { //On ne prend que les css
-       array_push($fichier, $file);
-      }
-	 }//fin if in array
-     }//while
-    natcasesort($fichier); //la fonction natcasesort( ) est la fonction de tri standard sauf qu'elle ignore la casse
-    
-	*/
 
 function recursive_readdir ($dir) {
 	global $conf, $template;

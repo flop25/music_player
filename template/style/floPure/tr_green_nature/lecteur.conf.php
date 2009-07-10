@@ -2,6 +2,6 @@
 $BACK_COLOR='0x3f540f';
 $FRONT_COLOR='0xffffff';
 $LIGHT_COLOR='0xedf2f2';
-$STYLE_FILE='template/style/floPure/tr_green_nature/lecteur.css';
+$STYLE_FILE='template/style/floPure/green_nature/lecteur.css';
 $TPL_FILE=MP_LOCALEDIT_PATH.'template/style/default.tpl';
 ?>

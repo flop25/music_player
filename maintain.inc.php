@@ -120,7 +120,7 @@ SELECT value FROM '.CONFIG_TABLE.'
    $conf=explode(',', $data_conf['value']);
    $nbr=count($conf);
    
-     if ($nbr!=11)
+     if ($nbr!=11 or $conf[9]=='lecteur.css')// pour update depuis 2.1.0
      {
       pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'mp_lecteur\')');
       pwg_query($q);

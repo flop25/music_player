@@ -43,21 +43,48 @@ padding:5px
 	text-decoration:none;
 	border:none;
 }
-/* backgrounds */
-#autre_content, #content, .content
-{
-	background:none;
+
+BODY, H1, H2, H3, DT,
+INPUT.rateButtonSelected  {
+  color:#B0CA00;
 }
+/* links */
+A, INPUT.rateButton {
+    color: #B0CA00;
+    background: transparent;
+}
+
+A:hover, INPUT.rateButton:hover {
+    color: #D7DC76;
+}
+
+/* backgrounds */
+BODY, #autre_content, #content, .content, #the_page
+{
+	background:none!important;
+}
+/* backgrounds */
+BODY {
+  background-color: #aacb87!important;	
+}
+
+#section_in, #section_right, #imageToolBar, #admin_content {
+  background-color: #76964B!important;
+}
+
+
+
+
 #section_up_right{
  background-image: url(images/content_top_right.jpg);
  background-repeat:no-repeat;
- background-position:bottom;
+ background-position:bottom left;
  width:22px;
  height:14px;
 }
 #section_up_left{
  background-image: url(images/content_top_left.jpg);
-  background-position:bottom;
+  background-position:bottom right;
   background-repeat:no-repeat;
  width:22px;
  height:14px;
@@ -78,14 +105,14 @@ padding:5px
 
 #section_bottom_right{
  background-image: url(images/content_bottom_right.jpg);
- background-position:top;
+ background-position:top left;
  background-repeat:no-repeat;
  width:22px;
  height:14px;
 }
 #section_bottom_left{
  background-image: url(images/content_bottom_left.jpg);
- background-position:top;
+ background-position:top right;
  background-repeat:no-repeat;
  width:22px;
  height:14px;

@@ -43,11 +43,36 @@ padding:5px
 	text-decoration:none;
 	border:none;
 }
-/* backgrounds */
-#autre_content, #content, .content
+
+BODY
 {
-	background:none;
+color:#696969;
+font-family:"Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
 }
+/* links */
+A, INPUT.rateButton {
+    color: #005e89;
+    background: transparent;
+}
+
+A:hover, INPUT.rateButton:hover {
+    color: #858460;
+}
+
+
+
+/* backgrounds */
+BODY, #autre_content, #content, .content, #the_page {
+	background:none!important;
+}
+/* backgrounds */
+BODY {
+	background-image: url(images/background6.jpg)!important;/* aussi/also eau_001.jpg */
+	background-position:center;
+	background-repeat:repeat-y;
+	background-color:#b4e2ef!important;
+}
+
 #section_up_right{
  background-image: url(images/content_top_right.png);
  background-repeat:no-repeat;

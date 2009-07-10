@@ -91,7 +91,7 @@ display:none;
     </tr>
     <tr>
       <td id="section_bottom_left"></td>
-      <td id="section_bottom" ><a href="http://manicho.deviantart.com/" title="Copyright Manicho" rel="copyright">.png by Manicho</a></td>
+      <td id="section_bottom" ><a href="http://manicho.deviantart.com/" id="mp_copyright" title="Copyright Manicho" rel="copyright">.png by Manicho</a></td>
       <td id="section_bottom_right" ></td>
     </tr>
   </table>
