@@ -124,7 +124,7 @@ $conf_lecteur = explode("," , $conf['mp_lecteur']);
 if ($conf_lecteur[10]=='true')
 {
 	$file = 'lecteur.conf.php';
-	$dir = LOCALEDIT_PATH.'template/style/';
+	$dir = MP_LOCALEDIT_PATH.'template/style/';
 	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
 	$template_file = $dir.$user['template'].'/'.$file;
 	

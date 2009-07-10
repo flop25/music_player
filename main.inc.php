@@ -20,7 +20,7 @@ define('MP_PLAYLIST' , $prefixeTable . 'mp_playlist');
 define('MP_MUSIC' , $prefixeTable . 'mp_music');
 define('MP_PATH', dirname(__FILE__).'/' );
 define('MP_NAME', basename(dirname(__FILE__)) );
-define('LOCALEDIT_PATH' , PHPWG_PLUGINS_PATH . basename(dirname(__FILE__)) . '/');
+define('MP_LOCALEDIT_PATH' , PHPWG_PLUGINS_PATH . basename(dirname(__FILE__)) . '/');
 
 include_once(dirname(__FILE__).'/class.inc.php');
 
