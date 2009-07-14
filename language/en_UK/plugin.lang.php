@@ -1,5 +1,4 @@
 <?php
-
 $lang['lien_titre'] = 'Listen Music';
 $lang['lien_expl'] = 'Show a pop-up emdebed player';
 
