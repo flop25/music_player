@@ -72,7 +72,7 @@ $lang['mp_admin_3_opt6'] = 'Avvia questa playlist per prima';
 $lang['mp_admin_3_opt7'] = "Avvia automaticamente la playlist (No Barra laterale)";
 $lang['mp_admin_3_opt9'] = "Tema di default : ";
 $lang['mp_admin_3_opt9b'] = "non cambiare";
-$lang['mp_admin_3_opt10'] = "Attivare la gestione automatica dei stili : il tema applicato al lettore sarà quello del'utente. Se questa opzione è disatticvata o se il tema del'utente non esiste per il lettore, allora il tema applicato è quello di défault precedente";
+$lang['mp_admin_3_opt10'] = "Attivare la gestione automatica dei stili : il tema applicato al lettore sarà quello del'utente. Se questa opzione è disatticvata o se il tema del'utente non esiste per il lettore, allora il tema applicato è quello di default precedente";
 	
 
 $lang['mp_adm_envoi_1'] = 'Descrizione di';
