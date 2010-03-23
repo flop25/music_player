@@ -38,7 +38,7 @@ Per modificare una playlist :
 $lang['mp_help_div5'] = "Devi andare nella playlist che vuoi e, alla seconda tappa, aggiungere l'indirizzo del file. Attenzione: anche se l'mp3 è sullo stesso server di questo plugin, devi scrivere l'indirizzo completo che inizia con http://";
 $lang['mp_help_div6'] = "Sì: dalla versione 1.3 è stato aggiunto un blocco per i podcast e gli mp3 distanti. Attenzione: la playlist deve essere in formato Atom, Xspf (che usa il plugin), o RSS. (I podcasts sono tutti in formato RSS)";
 $lang['mp_help_div7'] = 'Puoi trovare il supporto ufficiale del plugin qui (in lingua francese) : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781</a>';
-$lang['mp_help_div8'] = "Nuovo : potete limitare i diritti d'ascolto. Infatti, se create il gruppo 'music_group', solo gli utenti di questo gruppo potranno sentire la musica. Se il gruppo non esiste (di default), tutti potranno accedere al lettore";
+$lang['mp_help_div8'] = "Nuovo : potete limitare i diritti per l'ascolto. Infatti, se create il gruppo 'music_group', solo gli utenti di questo gruppo potranno sentire la musica. Se il gruppo non esiste (di default), tutti potranno accedere al lettore";
 
 $lang['mp_admin_leg'] = 'Gestione Playlists';
 $lang['mp_admin_tt_synchro'] = 'Sincronizza con la directory /music';
