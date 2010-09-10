@@ -6,7 +6,7 @@ function plugin_install()
 
     
 	    $q = 'CREATE TABLE ' . $prefixeTable . 'mp_playlist (
-id TINYINT NOT NULL AUTO_INCREMENT ,
+id SMALLINT NOT NULL AUTO_INCREMENT ,
 type VARCHAR( 50 ) NOT NULL ,
 url VARCHAR( 255 ) NOT NULL ,
 texte TINYTEXT NOT NULL ,
