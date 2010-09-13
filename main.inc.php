@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: music_player
-Version: 2.1.3
+Version: 2.1.4
 Description: play music / avoir de la musique
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=162
 Author: Flop25

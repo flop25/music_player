@@ -3,7 +3,7 @@ define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
 
 $m_p = get_plugin_data('music_player');
-
+$title="Music Player";
 ///////////[ interdiction groupe
 global $prefixeTable;
 $query = '
@@ -120,25 +120,32 @@ foreach ($pl_ex as $list) {
 // |                         Configuration du style                        |
 // +-----------------------------------------------------------------------+
 $conf_lecteur = explode("," , $conf['mp_lecteur']);
-
-if ($conf_lecteur[10]=='true')
+global $template;
+$r_theme_file=array();
+if ($conf_lecteur[10]=='true' and isset($template->smarty->template_dir) )
 {
+
 	$file = 'lecteur.conf.php';
 	$dir = MP_LOCALEDIT_PATH.'template/style/';
-	$theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
-	$template_file = $dir.$user['template'].'/'.$file;
 	
-	if (file_exists($theme_file))
+	foreach( $template->smarty->template_dir as $style)
 	{
-		include($theme_file);
+		$theme_file = explode("/", $style);
+		$pos = count($theme_file) - 2 ;
+		$theme_file = $dir.$theme_file[$pos].'/'.$file;
+		if (file_exists($theme_file))
+		{
+			$r_theme_file[]=$theme_file;
+		}
 	}
-	elseif (file_exists($template_file))
+	
+	
+}
+if (!empty($r_theme_file))
+{
+	foreach( $r_theme_file as $style)
 	{
-		include($template_file) ;
-	}
-	else
-	{
-		include_once($conf_lecteur[9]);
+		include($style);
 	}
 }
 else
@@ -188,7 +195,6 @@ $template->assign(
       'LIGHT_COLOR' => $LIGHT_COLOR,
     )
   );
-
 $template->set_filename('lecteur', $TPL_FILE);
 
 // +-----------------------------------------------------------------------+
