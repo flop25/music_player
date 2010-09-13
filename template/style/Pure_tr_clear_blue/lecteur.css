@@ -1,0 +1,124 @@
+#autre_content
+{
+width:100%;
+padding:0;
+margin:0;
+}
+#content
+{
+margin-left: auto;
+margin-bottom:1em;
+width:100%;
+border:none;
+  }
+#the_page
+{
+width:100%;
+border:none;
+  }
+body {
+min-width: inherit;
+width:100%;
+}
+#cache
+{
+padding:5px
+}
+#close_button
+{
+	margin-right:10px;
+	margin-left:90%;
+}
+#table_content
+{
+	padding:15px;
+}
+#section_up
+{
+	padding-top:5px;
+	text-align:right;
+}
+#section_up A
+{
+	text-decoration:none;
+	border:none;
+}
+
+BODY
+{
+color:#696969;
+font-family:"Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
+}
+/* links */
+A, INPUT.rateButton {
+    color: #005e89;
+    background: transparent;
+}
+
+A:hover, INPUT.rateButton:hover {
+    color: #858460;
+}
+
+
+
+/* backgrounds */
+BODY, #autre_content, #content, .content, #the_page {
+	background:none!important;
+}
+/* backgrounds */
+BODY {
+	background-image: url(images/background6.jpg)!important;/* aussi/also eau_001.jpg */
+	background-position:center;
+	background-repeat:repeat-y;
+	background-color:#b4e2ef!important;
+}
+
+#section_up_right{
+ background-image: url(images/content_top_right.png);
+ background-repeat:no-repeat;
+ background-position:left bottom;
+ width:22px;
+ height:14px;
+}
+#section_up_left{
+ background-image: url(images/content_top_left.png);
+  background-position:right bottom;
+  background-repeat:no-repeat;
+ width:22px;
+ height:14px;
+}
+#section_up{
+ background-image: url(images/content_top_backg.jpg);
+   background-position:bottom;
+   background-repeat: repeat-x;
+   height:14px;
+}
+
+#section_in, #section_right, #section_left {
+	background-image: url(images/content_backg.jpg)!important;
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#c4cbd3;
+}
+
+#section_bottom_right{
+ background-image: url(images/content_bottom_right.png);
+ background-position:left top;
+ background-repeat:no-repeat;
+ width:22px;
+ height:14px;
+}
+#section_bottom_left{
+ background-image: url(images/content_bottom_left.png);
+ background-position:right top;
+ background-repeat:no-repeat;
+ width:22px;
+ height:14px;
+}
+#section_bottom{
+ background-image: url(images/content_bottom_backg.jpg);
+ background-position:top;
+   background-repeat: repeat-x;
+  height:14px;
+}
+
