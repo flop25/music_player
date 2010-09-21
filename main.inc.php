@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: music_player
-Version: 2.1.4
+Version: 2.1.5
 Description: play music / avoir de la musique
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=162
 Author: Flop25
-Author URI: http://flop25.free.fr
+Author URI: http://www.planete-flop.fr/
 
 */
 

@@ -337,8 +337,8 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
      $page = explode('.', $page);
      $nb = count($page);
      $nom_fichier = $page[0];
-     $file = addslashes($file);
-     $nom_fichier = addslashes($nom_fichier);
+     $file = utf8_encode(addslashes($file));
+     $nom_fichier = utf8_encode(addslashes($nom_fichier));
 	 $query = '
   INSERT INTO '.MP_MUSIC.'
   (pl_id, rang, url, nom)
@@ -359,7 +359,9 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
   
    if(preg_match('`^music`', $music['url'])) {
     $filename="./plugins/music_player/".$url;
+    $filename=utf8_decode($filename);
     if (!file_exists($filename)) {
+		$music['url']=addslashes($music['url']);
       pwg_query('DELETE FROM '.MP_MUSIC.' WHERE url IN (\''.$music['url'].'\')');
 	  //$mp_msgs[] = $lang['mp_msg_edit4'].$url;
 	  $page['infos'][]=l10n('mp_msg_edit4').$url;

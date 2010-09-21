@@ -433,7 +433,9 @@ if ($_POST['envoi_config']=='plugin' or isset($_POST['foot']))
         
   //$mp_msgs[] = $lang['mp_msg_admin_6'];
   array_push($page['infos'], l10n('mp_msg_admin_6'));
-}}
+}
+}
+load_conf_from_db();
 
 $check='checked="checked"';
 if ($conf_lecteur[3]=='true') { $miniature=$check; } else { $miniature=NULL; } 
@@ -460,18 +462,17 @@ if ($conf_plugin[2]=='true') { $foot=$check; } else { $foot=NULL; }
 
 function recursive_readdir ($dir) {
 	global $conf, $template;
+
 	$conf_lecteur = explode("," , $conf['mp_lecteur']);
 	$dh = opendir ($dir); // on l'ouvre
 	while (($file = readdir ($dh)) !== false ) { //boucle pour parcourir le repertoire 
-		if ($file !== '.' && $file !== '..') { // no comment
+		if ($file !== '.' && $file !== '..') {
 			$path =$dir.'/'.$file; // construction d'un joli chemin...
 			if (is_dir ($path)) { //si on tombe sur un sous-repertoire 
-				//echo '<p style="font-weight: bold; border : 1pt solid #000000;">', $path, ' -> dir</p>'; // ptit style...
-				recursive_readdir ($path); // appel recursif pour lire a l'interieur de ce sous-repertoire
+				recursive_readdir ($path);
 			}
 			else
 			{
-				//echo $path, '<br />'; // si il s'agit d'un fichier, on affiche, tout simplement.
 			  $page = explode('.', $file);
 			  $nb = count($page);
 			  $nom_fichier = $page[0];
@@ -485,7 +486,7 @@ function recursive_readdir ($dir) {
 			   $ext_fichier = '';
 			  }
 			
-			  if($ext_fichier == 'conf.php') { //On ne prend que les css
+			  if($ext_fichier == 'conf.php') { //On ne prend que les .conf.php
 				  $path = str_replace("/plugins/music_player", "", $path);
 				  if ($conf_lecteur[9]==$path)
 				  {
