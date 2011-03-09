@@ -2,6 +2,14 @@
 define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
 
+/////////////// PAS DE MENU !
+if ( function_exists( 'add_menu_on_public_pages' ) or function_exists( 'spread_menus_on_public_pages' ) )
+{
+	remove_event_handler('loc_after_page_header', 'add_menu_on_public_pages', 20);
+	remove_event_handler('loc_after_page_header', 'spread_menus_on_public_pages', 20);
+
+}
+
 $m_p = get_plugin_data('music_player');
 $title="Music Player";
 ///////////[ interdiction groupe
@@ -45,16 +53,15 @@ if (isset($display) and $display==0)
 //////////
 else {
 
-$page['body_id'] = 'lecteur';
-
-  global $conf;
-  $conf_plugin = explode("," , $conf['mp_plugin']);
-  $template->assign(
-    array(
-      'conf_plugin_1' => $conf_plugin[1],
-      'conf_plugin_2' => $conf_plugin[2],
-    )
-  );
+$page['body_id'] = 'theMPlecteur';
+global $conf;
+$conf_plugin = explode("," , $conf['mp_plugin']);
+$template->assign(
+	array(
+		'conf_plugin_1' => $conf_plugin[1],
+		'conf_plugin_2' => $conf_plugin[2],
+	)
+);
 
 
 /*

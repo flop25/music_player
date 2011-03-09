@@ -1,4 +1,4 @@
-{html_head}<link rel="stylesheet" type="text/css" href="{$STYLE_FILE}">{/html_head}
+{combine_css path="$STYLE_FILE"}
 {html_head}<script type="text/javascript" src="./player/swfobject.js"></script>{/html_head}
 {html_head}<script type="text/javascript">
 {literal}

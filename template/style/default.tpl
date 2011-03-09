@@ -1,5 +1,5 @@
-{html_head}<link rel="stylesheet" type="text/css" href="{$STYLE_FILE}">{/html_head}
-{html_head}<script type="text/javascript" src="./player/swfobject.js"></script>{/html_head}
+{combine_css path="$STYLE_FILE"}
+{combine_script id="music_player_js" load="header" path="plugins/music_player/player/swfobject.js"}
 {html_head}<script type="text/javascript">
 {literal}
 
