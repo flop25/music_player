@@ -1,6 +1,8 @@
 {combine_css path="$STYLE_FILE"}
 {combine_script id="music_player_js" load="header" path="plugins/music_player/player/swfobject.js"}
-{footer_script require='music_player_js'}{literal}<script type="text/javascript">
+{html_head}<script type="text/javascript">
+{literal}
+
 	function loadFile(obj) { thisMovie("playlist").loadFile(obj); };
 	// This is a javascript handler for the player and is always needed.
 	function thisMovie(movieName) {
@@ -10,8 +12,9 @@
 			return document[movieName];
 		}
 	};
-</script>{/literal}
-{/footer_script}
+{/literal}
+
+</script>{/html_head}
 
 {if $conf_plugin_1!='true' }
 {html_head}<style type="text/css">{literal}
