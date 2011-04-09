@@ -1,5 +1,5 @@
 <?php
-$lang['lien_titre'] = 'Ascolta musica';
+$lang['lien_titre'] = 'Ascoltare della musica';
 $lang['lien_expl'] = 'Avvia un pop-up contentente il lettore audio';
 
 $lang['mp_evidence_title'] = 'Informazione';
@@ -140,5 +140,6 @@ $lang['mp_linkimg_ok'] = 'Immagine registrata';
 $lang['mp_info_min']="[ La miniatura è opzionale. ]";
 
 $lang['mp_text_no_autorisation']="Non siete autorizzati ad ascoltare la musica! Contattare l'amministratore";
+
 
 ?>
