@@ -2,7 +2,7 @@
 /*
 Plugin Name: music_player
 Version: auto
-Description: play music / avoir de la musique
+Description: play music 
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=162
 Author: Flop25
 Author URI: http://www.planete-flop.fr/
