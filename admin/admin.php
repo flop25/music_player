@@ -356,11 +356,13 @@ foreach ($playlist as $list) {
 $conf_lecteur = explode("," , $conf['mp_lecteur']);
 $conf_plugin = explode("," , $conf['mp_plugin']);
 
-////envoi
+// +-----------------------------------------------------------------------+
+// |                         changement de config                          |
+// +-----------------------------------------------------------------------+
 if (isset($_POST['envoi_config']) ){
 if ($_POST['envoi_config']=='lecteur')
 {
-  if ($_POST['style']=='NULL')
+  if (isset($_POST['style']) and $_POST['style']=='NULL')
   {
 	  $style=$conf_lecteur['9'];
   }
@@ -369,40 +371,37 @@ if ($_POST['envoi_config']=='lecteur')
 	  $style=$_POST['style'];
   }
   
-  if ($_POST['mp_miniature']=="true")
+  if (isset($_POST['mp_miniature']) and $_POST['mp_miniature']=="true")
   {  
-    $conf_lecteur = array(
-      $_POST['h_tt'],
-      $_POST['l_tt'],
-      $_POST['h'],
-      $_POST['mp_miniature'],
-      $_POST['l'],
-      $_POST['mp_shuffle'],
-      $_POST['mp_repeat'],
-      $_POST['mp_autostart'],
-      $_POST['mp_autoscroll'],
-      $style,
-      $_POST['various_style'],
-    );
+      $h = $_POST['h_tt'];
   } 
   else
   {
       $h = $_POST['h_tt'] - 20;//pour un affichage correct la playlist doit faire la hauteur totale moins les 20px de la barre 
-    $conf_lecteur = array(
-      $_POST['h_tt'],
-      $_POST['l_tt'],
-      $h,
-      $_POST['mp_miniature'],
-      '0',
-      $_POST['mp_shuffle'],
-      $_POST['mp_repeat'],
-      $_POST['mp_autostart'],
-      $_POST['mp_autoscroll'],
-      $style,
-      $_POST['various_style'],
-    );
   }    
-  $newconf_lecteur = implode ("," , $conf_lecteur);
+
+	$newconf_lecteur = (isset($_POST['h_tt']) and !empty($_POST['h_tt'])) ? $_POST['h_tt'] : '148';
+	$newconf_lecteur .= (isset($_POST['l_tt']) and !empty($_POST['l_tt'])) ? ','.$_POST['l_tt'] : ',300';
+	$newconf_lecteur .= (isset($_POST['h_tt']) and !empty($_POST['h_tt'])) ? ','.$h : ',128';
+	$newconf_lecteur .= (isset($_POST['mp_miniature'])) ? ',true' : ',false';
+	if (!isset($_POST['l']) or empty($_POST['l']))
+	{
+		$newconf_lecteur .= ',128';
+	}
+	elseif (isset($_POST['mp_miniature']) and $_POST['mp_miniature']=="true")
+	{
+		$newconf_lecteur .= ','.$_POST['l'];
+	}
+	else
+	{
+		$newconf_lecteur .= ',0';
+	}
+	$newconf_lecteur .= (isset($_POST['mp_shuffle'])) ? ',true' : ',false';
+	$newconf_lecteur .= (isset($_POST['mp_repeat'])) ? ',true' : ',false';
+	$newconf_lecteur .= ','.$_POST['mp_autostart'];
+	$newconf_lecteur .= (isset($_POST['mp_autoscroll'])) ? ',true' : ',false';
+	$newconf_lecteur .= ','.$style;
+	$newconf_lecteur .= (isset($_POST['various_style'])) ? ',true' : ',false';
   $query = '
     UPDATE '.CONFIG_TABLE.'
     SET value="'.$newconf_lecteur.'"
@@ -416,14 +415,11 @@ array_push($page['infos'], l10n('mp_msg_admin_5'));
 if (isset($_POST['envoi_config']) ){
 if ($_POST['envoi_config']=='plugin' or isset($_POST['foot']))
 {
-    $conf_plugin = array(
-      $_POST['evidence'],
-      $_POST['head'],
-      $_POST['foot'],
-      $_POST['h_pop'],
-      $_POST['l_pop'],
-    );
-  $newconf_plugin = implode ("," , $conf_plugin);
+	$newconf_plugin = (isset($_POST['evidence'])) ? 'true' : 'false';
+	$newconf_plugin .= (isset($_POST['head'])) ? ',true' : ',false';
+	$newconf_plugin .= (isset($_POST['foot'])) ? ',true' : ',false';
+	$newconf_plugin .= (isset($_POST['h_pop']) and !empty($_POST['h_pop'])) ? ','.$_POST['h_pop'] : ',260';
+	$newconf_plugin .= (isset($_POST['l_pop']) and !empty($_POST['l_pop'])) ? ','.$_POST['l_pop'] : ',400';
   $query = '
     UPDATE '.CONFIG_TABLE.'
     SET value="'.$newconf_plugin.'"
@@ -436,7 +432,8 @@ if ($_POST['envoi_config']=='plugin' or isset($_POST['foot']))
 }
 }
 load_conf_from_db();
-
+$conf_lecteur = explode("," , $conf['mp_lecteur']);
+$conf_plugin = explode("," , $conf['mp_plugin']);
 $check='checked="checked"';
 if ($conf_lecteur[3]=='true') { $miniature=$check; } else { $miniature=NULL; } 
 if ($conf_lecteur[5]=='true') { $shuffle=$check; } else { $shuffle=NULL; }

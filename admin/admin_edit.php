@@ -25,7 +25,6 @@ UPDATE '.MP_PLAYLIST.'
    ;';
    pwg_query($query);
    $page['infos'][]=l10n('mp_msg_edit1');
-   //$mp_msgs[] = $lang['mp_msg_edit1'];
 
 }
 if (isset($_GET['id']))
@@ -138,7 +137,6 @@ if (isset($_POST['envoi']) and $_POST['envoi']=="suppr")
   {
    $filename="./plugins/music_player/".$url;
    unlink($filename);
-   //$mp_msgs[] = $lang['mp_msg_edit5'].$url;
    $page['infos'][]=l10n('mp_msg_edit5').$url;
   }
 
@@ -161,7 +159,6 @@ if (isset($_POST['envoi']) and $_POST['envoi']=="suppr")
     $i++;
   }//while
  pwg_query('DELETE FROM '.MP_MUSIC.' WHERE id IN (\''.$_POST['id'].'\')');
-// $mp_msgs[] = $lang['mp_msg_edit4'].$url;
  $page['infos'][]=l10n('mp_msg_edit4').$url;
 }
 if (isset($_GET['suppr']))
@@ -214,7 +211,6 @@ UPDATE '.MP_MUSIC.'
    ;';
    pwg_query($query);
    
-  //$mp_msgs[] = $lang['mp_msg_edit3'];
   $page['infos'][]=l10n('mp_msg_edit3');
 }
 // +-----------------------------------------------------------------------+
@@ -274,7 +270,6 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='ajout')
   (\''.$_GET['music'].'\', \''.$rang.'\', \''.$url.'\', \''.$nom.'\' )
 ;';
      pwg_query($query);
-	 //$mp_msgs[] = $lang['mp_msg_admin_4'].$url;
 	 $page['infos'][]=l10n('mp_msg_admin_4').$url;
  }
 }
@@ -363,7 +358,6 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
     if (!file_exists($filename)) {
 		$music['url']=addslashes($music['url']);
       pwg_query('DELETE FROM '.MP_MUSIC.' WHERE url IN (\''.$music['url'].'\')');
-	  //$mp_msgs[] = $lang['mp_msg_edit4'].$url;
 	  $page['infos'][]=l10n('mp_msg_edit4').$url;
     }
    }
@@ -405,8 +399,6 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_xml')
 	 die("Le fichier est inaccessible en écriture");
 	 }
       fwrite($file, $_xml);
-
-//  $mp_msgs[] = $lang['mp_msg_edit2'];
   $page['infos'][]=l10n('mp_msg_edit2');
 }
 // +-----------------------------------------------------------------------+
@@ -478,19 +470,8 @@ if (isset($_GET['music']))//affichage du contenu de la playlist
 }
 
 // +-----------------------------------------------------------------------+
-// |               affichage des msg                                       |
+// |               affichage                                               |
 // +-----------------------------------------------------------------------+
-/*
-if (count($mp_msgs) > 0)
-{
-  $template->append('mp_msgs',array());
-  foreach ($mp_msgs as $mp_msg)
-  {
-    $template->append('mp_msgs.mp_msg',
-                                 array('MP_MSG'=>$mp_msg));
-  }
-}
-*/
 $template->set_filename('plugin_admin_content', $m_p->plugin_path.'template/admin_edit.tpl');
 $template->assign_var_from_handle('ADMIN_CONTENT', 'plugin_admin_content');
 

@@ -4,11 +4,6 @@
   </ul>
   <h2>Music player / {$PLAYLIST}</h2>
 </div>
-<!--
-<div class="header_msgs">
-  <p>mp_msgs.mp_msg.MP_MSG</p>
-</div>
- -->
 {foreach from=$edit_txt item=edit_txt}
 <form action="" method="post" name="edit_txt">
   {'mp_adm_edit_1'|@translate} :
