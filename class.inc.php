@@ -36,7 +36,7 @@ class Musicplayer
 	$conf_plugin = explode("," , $conf['mp_plugin']);
  	 if (isset($conf_plugin)) {
 		$template->concat( 'PLUGIN_INDEX_ACTIONS',
-		  '<li><a href="javascript:void(0)" onClick="window.open(\''.get_root_url().'plugins/'.$this->plugin_name.'/lecteur.php\',\'musique\',\'width='.$conf_plugin[4].',height='.$conf_plugin[3].',top=400,left=400,toolbar=no,location=no,menubar=no,resizable=yes,status=no,alwaysRaised=yes\')" ><img src="'.get_root_url().'plugins/'.$this->plugin_name.'/template/icon/icon32.png"  width="26px" height="26px" alt="Music Player" title="Play Music" class="button" /></a></li>');
+		  '<li><a href="javascript:void(0)" onClick="window.open(\''.get_root_url().'plugins/'.$this->plugin_name.'/lecteur.php\',\'musique\',\'width='.$conf_plugin[4].',height='.$conf_plugin[3].',top=400,left=400,toolbar=no,location=no,menubar=no,resizable=yes,status=no,alwaysRaised=yes\')" ><img src="'.get_root_url().'plugins/'.$this->plugin_name.'/template/icon/icon32.png"  width="26" height="26" alt="Music Player" title="Play Music" class="button" /></a></li>');
 	  }
   }
 
