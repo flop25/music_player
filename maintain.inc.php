@@ -148,6 +148,10 @@ $exist = $data_table['result'];
       pwg_query($q);
     }
   }
+  $q = 'ALTER TABLE '.$prefixeTable.'mp_playlist CHANGE id id BIGINT( 4 ) NOT NULL AUTO_INCREMENT';pwg_query($q);
+  $q = 'ALTER TABLE '.$prefixeTable.'mp_music CHANGE id id BIGINT( 4 ) NOT NULL AUTO_INCREMENT';pwg_query($q);
+  $q = 'ALTER TABLE '.$prefixeTable.'mp_music CHANGE pl_id pl_id BIGINT( 4 ) NOT NULL';pwg_query($q);
+  $q = 'ALTER TABLE '.$prefixeTable.'mp_music CHANGE rang rang BIGINT( 4 ) NOT NULL';pwg_query($q);
   
 }//fin active
 
