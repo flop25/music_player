@@ -3,11 +3,8 @@
 if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 $m_p = get_plugin_data('music_player');
 
-global $conf, $template, $lang, $page;
-global $prefixeTable;
+global $conf, $template, $lang, $page, $prefixeTable;
 load_language('plugin.lang', $m_p->plugin_path);
-
-$page['infos'] = array();
 
 $template->assign(array(
 	'PLUGIN_PATH' 			=> $m_p->plugin_path, 
@@ -60,15 +57,15 @@ if (isset($_POST['envoi']) and $_POST['envoi'] == "synchro")
     
        if(!in_array($file, array('.','..'))){ //on eleve le parent et le courant '. et ..'
 	 if(is_file($file)) { continue; }
-	 $page = $file; //sort l'extension du fichier
-     $page = explode('.', $page);
-     $nb = count($page);
-     $nom_fichier = $page[0];
+	 $pg = $file; //sort l'extension du fichier
+     $pg = explode('.', $pg);
+     $nb = count($pg);
+     $nom_fichier = $pg[0];
      for ($i = 1; $i < $nb-1; $i++){
-     $nom_fichier .= '.'.$page[$i];
+     $nom_fichier .= '.'.$pg[$i];
      }
-     if(isset($page[1])){
-     $ext_fichier = $page[$nb-1];
+     if(isset($pg[1])){
+     $ext_fichier = $pg[$nb-1];
      }
      else {
      $ext_fichier = '';
@@ -126,15 +123,15 @@ $template->assign_var_from_handle('ENVOI', 'envoi');
     
        if(!in_array($file, array('.','..'))){ //on eleve le parent et le courant '. et ..'
 	 if(is_file($file)) { continue; }
-	 $page = $file; //sort l'extension du fichier
-     $page = explode('.', $page);
-     $nb = count($page);
-     $nom_fichier = $page[0];
+	 $pg = $file; //sort l'extension du fichier
+     $pg = explode('.', $pg);
+     $nb = count($pg);
+     $nom_fichier = $pg[0];
      for ($i = 1; $i < $nb-1; $i++){
-     $nom_fichier .= '.'.$page[$i];
+     $nom_fichier .= '.'.$pg[$i];
      }
-     if(isset($page[1])){
-     $ext_fichier = $page[$nb-1];
+     if(isset($pg[1])){
+     $ext_fichier = $pg[$nb-1];
      }
      else {
      $ext_fichier = '';
@@ -169,12 +166,12 @@ UPDATE '.MP_PLAYLIST.'
 	 
       foreach($fichier as $file) {
 	   ///on va trouver le nom du fichier
-      $page = $file;
-      $page = explode('.', $page);
-      $nb = count($page);
-      $nom_fichier = $page[0];
+      $pg = $file;
+      $pg = explode('.', $pg);
+      $nb = count($pg);
+      $nom_fichier = $pg[0];
        for ($i = 1; $i < $nb-1; $i++){
-         $nom_fichier .= '.'.$page[$i];
+         $nom_fichier .= '.'.$pg[$i];
        }
       $_xml .="\t\t<track>\r\n";
       $_xml .="\t\t\t<title>".$nom_fichier."</title>\r\n";
@@ -191,7 +188,6 @@ UPDATE '.MP_PLAYLIST.'
 	 }
       fwrite($file, $_xml);
 
-  //$mp_msgs[] = $lang['mp_msg_admin_3_1'].$value.'/'.$value.'.xml'.$lang['mp_msg_admin_3_2'];
   array_push($page['infos'], l10n('mp_msg_admin_3_1').$value.'/'.$value.'.xml'.l10n('mp_msg_admin_3_2'));
  }
 }//fin post
@@ -222,15 +218,15 @@ INSERT INTO '.MP_PLAYLIST.'
     
      if(!in_array($file, array('.','..'))){ //on eleve le parent et le courant '. et ..'
 	  if(is_file($file)) { continue; }
-	  $page = $file; //sort l'extension du fichier
-      $page = explode('.', $page);
-      $nb = count($page);
-      $nom_fichier = $page[0];
+	  $pg = $file; //sort l'extension du fichier
+      $pg = explode('.', $pg);
+      $nb = count($pg);
+      $nom_fichier = $pg[0];
       for ($i = 1; $i < $nb-1; $i++){
-       $nom_fichier .= '.'.$page[$i];
+       $nom_fichier .= '.'.$pg[$i];
       }
-      if(isset($page[1])){
-       $ext_fichier = $page[$nb-1];
+      if(isset($pg[1])){
+       $ext_fichier = $pg[$nb-1];
       }
       else {
        $ext_fichier = '';
@@ -249,10 +245,10 @@ INSERT INTO '.MP_PLAYLIST.'
 
 	foreach($fichier as $file) {
 	
-	$page = $file; //sort nom_fichier
-    $page = explode('.', $page);
-    $nb = count($page);
-    $nom_fichier = $page[0];
+	$pg = $file; //sort nom_fichier
+    $pg = explode('.', $pg);
+    $nb = count($pg);
+    $nom_fichier = $pg[0];
 
      $file = addslashes($file);
      $nom_fichier = addslashes($nom_fichier);
@@ -265,9 +261,7 @@ INSERT INTO '.MP_PLAYLIST.'
      pwg_query($query);
 	$rang++;
 	}
-
-  //$mp_msgs[] = $lang['mp_msg_admin_4'].$_POST['url_'.$n.''];
-  $page['infos'][]= l10n('mp_msg_admin_4').' '.$_POST['url_'.$n];
+  array_push($page['infos'], l10n('mp_msg_admin_4').' '.$_POST['url_'.$n]);
  }//fin for
 }
 // +------------------------------------------------------------+
@@ -409,7 +403,6 @@ if ($_POST['envoi_config']=='lecteur')
     LIMIT 1';
   pwg_query($query);
         
-//  $mp_msgs[] = $lang['mp_msg_admin_5'];
 array_push($page['infos'], l10n('mp_msg_admin_5'));
 }}
 if (isset($_POST['envoi_config']) ){
@@ -427,7 +420,6 @@ if ($_POST['envoi_config']=='plugin' or isset($_POST['foot']))
     LIMIT 1';
   pwg_query($query);
         
-  //$mp_msgs[] = $lang['mp_msg_admin_6'];
   array_push($page['infos'], l10n('mp_msg_admin_6'));
 }
 }
@@ -470,14 +462,14 @@ function recursive_readdir ($dir) {
 			}
 			else
 			{
-			  $page = explode('.', $file);
-			  $nb = count($page);
-			  $nom_fichier = $page[0];
+			  $pg = explode('.', $file);
+			  $nb = count($pg);
+			  $nom_fichier = $pg[0];
 			  for ($i = 1; $i < $nb-1; $i++){
-			   $nom_fichier .= '.'.$page[$i];
+			   $nom_fichier .= '.'.$pg[$i];
 			  }
-			  if(isset($page[1])){
-			   $ext_fichier = $page[$nb-2].'.'.$page[$nb-1];
+			  if(isset($pg[1])){
+			   $ext_fichier = $pg[$nb-2].'.'.$pg[$nb-1];
 			  }
 			  else {
 			   $ext_fichier = '';
@@ -535,19 +527,8 @@ recursive_readdir ('./plugins/music_player/template/style');
 // +-----------------------------------------------------------------------+
 // |               affichage des msg                                       |
 // +-----------------------------------------------------------------------+
-/*
-if (count($mp_msgs) > 0)
-{
-  $template->append('mp_msgs',array());
-  foreach ($mp_msgs as $mp_msg)
-  {
-    $template->append('mp_msgs.mp_msg',
-                                 array('MP_MSG'=>$mp_msg));
-  }
-}
-*/
+
 $template->set_filename('plugin_admin_content', $m_p->plugin_path.'template/admin.tpl');
 $template->assign_var_from_handle('ADMIN_CONTENT', 'plugin_admin_content');
-
 
 ?>

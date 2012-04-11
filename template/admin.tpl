@@ -1,5 +1,14 @@
-
 {html_head}<link rel="stylesheet" type="text/css" href="./template/admin.css">{/html_head}
+{combine_script id='jquery.tipTip' load='async' path='themes/default/js/plugins/jquery.tipTip.minified.js'}
+{footer_script require='jquery.tipTip'}{literal}
+jQuery(document).ready(function() {
+jQuery('#list li A[title]').tipTip({
+'delay' : 0,
+'fadeIn' : 200,
+'fadeOut' : 200
+});
+});
+{/literal}{/footer_script}
 <div class="titrePage">
   <ul class="categoryActions">
     <li><a href="admin.php?page=plugin&section=music_player/admin/help.php" title="{'Help'|@translate}">{'mp_need_help'|@translate}</a></li>
@@ -24,7 +33,7 @@
 </div>
 <ul id="list">
   {foreach from=$list item=list}
-  <li><a href="{$pwg_root}plugins/music_player/music/{$list.URL}/{$list.URL}.xml">{'mp_admin_folder'|@translate} : {$list.URL} -- {'mp_admin_nm_pl'|@translate} : {$list.TEXTE}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&section=music_player/admin/admin_edit.php&id={$list.ID}" title="{'mp_admin_nm_edit'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/category_edit.png" class="button" alt="{'mp_admin_nm_edit'|@translate}"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$list.ID}" title="{'mp_admin_pl'|@translate}"><img src="plugins/music_player/template/audio.png" class="button" alt="{'mp_admin_pl'|@translate}"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&amp;section=music_player/admin/admin_img.php&id={$list.ID}" title="{'mp_admin_min'|@translate}"><img src="plugins/music_player/template/miniature.png" class="button" alt="{'mp_admin_min'|@translate}"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&amp;section=music_player/admin/admin_suppr.php&id={$list.ID}" title="{'delete'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/delete.png" class="button" alt="{'delete'|@translate}"></a> </li>
+  <li><a href="{$pwg_root}plugins/music_player/music/{$list.URL}/{$list.URL}.xml">{'mp_admin_folder'|@translate} : {$list.URL} -- {'mp_admin_nm_pl'|@translate} : {$list.TEXTE}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&section=music_player/admin/admin_edit.php&id={$list.ID}" title="{'mp_admin_nm_edit'|@translate}"><img src="plugins/music_player/template/icon/category_edit.png" class="button" alt="{'mp_admin_nm_edit'|@translate}"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$list.ID}" title="{'mp_admin_pl'|@translate}"><img src="plugins/music_player/template/audio.png" class="button" alt="{'mp_admin_pl'|@translate}"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&amp;section=music_player/admin/admin_img.php&id={$list.ID}" title="{'mp_admin_min'|@translate}"><img src="plugins/music_player/template/miniature.png" class="button" alt="{'mp_admin_min'|@translate}"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="admin.php?page=plugin&amp;section=music_player/admin/admin_suppr.php&id={$list.ID}" title="{'delete'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/delete.png" class="button" alt="{'delete'|@translate}"></a> </li>
   {/foreach}
 </ul>
 </fieldset>
