@@ -26,15 +26,15 @@ $lang['mp_help_div2'] = "No se han actualizado lista de reproducción : Para ell
 $lang['mp_help_div3'] = "Esta es una imagen que se puede agregar haciendo clic en el tercero icono  ('Gestionar en miniatura') junto a la lista de reproducción";
 $lang['mp_help_div4'] = "El plug-in le permite crear y gestionar listas de reproducción, personalizar la pantalla del reproductor y su pop-up.<br />
 para crear una lista de reproducción :
-<br />- En primer lugar asegúrate de que tienes una carpeta / música en el directorio de plugins. ¡IMPORTANTE! (usuario de Free no están preocupados con la siguiente declaración) El archivo /música debe tener permisos de lectura / escritura, en otras palabras,, un chmod de 777 o rwxrwxrwx.
-<br />- A continuación, cree una carpeta en la carpeta /música que contendrá la lista de reproducción mp3 y en .xml. Advertencia: el nombre de la carpeta es importante: EVITAR LOS CARACTERES Y COMILLAS en los nombres de las carpetas
-<br />- hacer clic en 'sincronizar la carpeta /music' : las carpetas estaran listadas dentro de /music igual que los ficheros mp3 contenidos en ellos. Las listas de reproducción en formato xml estan creadas con el mismo nombre que la carpeta.
-<br />- recepción del formulario : sirve a tener un pequeño texto descriptivo que servirá como un vínculo para reproducir la lista de reproducción en la ventana del reproductor. Deja el campo de texto en blanco y la playlsit en cuestión no será almacenada en la base de datos
-<br />- envio del formulario y registro en la base de datos : A continuación, puede añadir un archivo de upload en miniatura o enlace : Incluso puede enviar directamente a través de FTP con el nombre [nombre de la carpeta] en '.jpg'
-<br /><br />
+<br/>- En primer lugar asegúrate de que tienes una carpeta / música en el directorio de plugins. ¡IMPORTANTE! (usuario de Free no están preocupados con la siguiente declaración) El archivo /música debe tener permisos de lectura / escritura, en otras palabras,, un chmod de 777 o rwxrwxrwx.
+<br/>- A continuación, cree una carpeta en la carpeta /música que contendrá la lista de reproducción mp3 y en .xml. Advertencia: el nombre de la carpeta es importante: EVITAR LOS CARACTERES Y COMILLAS en los nombres de las carpetas
+<br/>- hacer clic en 'sincronizar la carpeta /music' : las carpetas estaran listadas dentro de /music igual que los ficheros mp3 contenidos en ellos. Las listas de reproducción en formato xml estan creadas con el mismo nombre que la carpeta.
+<br/>- recepción del formulario : sirve a tener un pequeño texto descriptivo que servirá como un vínculo para reproducir la lista de reproducción en la ventana del reproductor. Deja el campo de texto en blanco y la playlsit en cuestión no será almacenada en la base de datos
+<br/>- envio del formulario y registro en la base de datos : A continuación, puede añadir un archivo de upload en miniatura o enlace : Incluso puede enviar directamente a través de FTP con el nombre [nombre de la carpeta] en '.jpg'
+<br/><br/>
 para gestionar una lista de reproducción:
-<br />- haga clic en el segundo icono al lado de la lista de reproducción
-<br />- A continuación, siga los pasos: no se olvide de el último !";
+<br/>- haga clic en el segundo icono al lado de la lista de reproducción
+<br/>- A continuación, siga los pasos: no se olvide de el último !";
 $lang['mp_help_div5'] = "Para ello, accede a la lista de su elección y, en el paso 2, agregue el archivo. Advertencia: aunque el mp3 está en el mismo servidor que este plugin requiere una dirección URL completa, con http://";
 $lang['mp_help_div6'] = "Si : desde la 1.3 un bloque para podcast y lista de reproducción distante ha sido añadido. Advertencia: la lista de reproducción debe estar en formato Atom, XSPF (Usado por el plug-in), o RSS. (Los podcasts son RSS)";
 $lang['mp_help_div7'] = 'El soporte de plug-in se hace aquí : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781</a>';
@@ -101,7 +101,6 @@ $lang['mp_msg_edit2'] = "Lista de reproducción actualizada !";
 $lang['mp_msg_edit3'] = "Rango modificado !";
 $lang['mp_msg_edit4'] = "Eliminación en la base de datos de :";
 $lang['mp_msg_edit5'] = "Eliminación  de :";
-a
 $lang['mp_adm_etape_1'] = "1° etapa (optional)";
 $lang['mp_adm_et1_txt'] = "Se han añadido o suprimido archivo mp3 en la carpeta ? Si si, debe sincronizar la base de datos / archivo :";
 $lang['mp_adm_etape_2'] = "2° etapa (optional))";
