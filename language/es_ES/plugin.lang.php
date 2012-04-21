@@ -22,8 +22,8 @@ $lang['mp_help_q7'] = "No puedo encontrar respuestas aquí / tengo un problema m
 $lang['mp_help_q8'] = "Nuevo: Se pueden restringir los derechos de la escucha";
 
 $lang['mp_help_div1'] = "Los mp3 deben estar en la carpeta de música del plugin de esa manera\"[la carpeta de pwg]/plugins/music_player/music/[nueva playlist]/\". Es recomendable hacer lista de reproducción por artista (music/moby/go.pm3), o de otro modo poner el nombre del artista en el nombre del archivo mp3 (music/electro/moby-go.pm3)";
-$lang['mp_help_div2'] = "No se han actualizado lista de reproducción : Para ello haga clic en el segundo icono  ("Gestionar la música") junto a la lista de reproducción, entonces el último paso realizado hacer 'Guardar cambios'";
-$lang['mp_help_div3'] = "Esta es una imagen que se puede agregar haciendo clic en el tercero icono  ("Gestionar en miniatura") junto a la lista de reproducción";
+$lang['mp_help_div2'] = "No se han actualizado lista de reproducción : Para ello haga clic en el segundo icono  ('Gestionar la música') junto a la lista de reproducción, entonces el último paso realizado hacer 'Guardar cambios'";
+$lang['mp_help_div3'] = "Esta es una imagen que se puede agregar haciendo clic en el tercero icono  ('Gestionar en miniatura') junto a la lista de reproducción";
 $lang['mp_help_div4'] = "El plug-in le permite crear y gestionar listas de reproducción, personalizar la pantalla del reproductor y su pop-up.<br />
 para crear una lista de reproducción :
 <br />- En primer lugar asegúrate de que tienes una carpeta / música en el directorio de plugins. ¡IMPORTANTE! (usuario de Free no están preocupados con la siguiente declaración) El archivo /música debe tener permisos de lectura / escritura, en otras palabras,, un chmod de 777 o rwxrwxrwx.
