@@ -113,4 +113,6 @@ $lang['mp_ou'] = 'NEBO';
 $lang['mp_send'] = 'Odeslat';
 $lang['mp_text_no_autorisation'] = 'Nemáte povoleno poslouchat hudbu! Kontaktujte prosím webmastera, aby vám vysvětlil proč a případně vám to dovolil.';
 $lang['mp_uploadimg_ok'] = 'Obrázek uložen';
+$lang['mp_help_div1'] = 'Mp3 musí být umístěny ve složce Music, jako například "[PWG adresář]/plugins/music_player/music/[nový playlist]/". Doporučujeme řadit playlisty podle interpreta (music/moby/go.mp3), případně dejte jméno interpreta přímo do názvu souboru (music/electro/moby-go.mp3)';
+$lang['mp_help_div7'] = 'Podporu pluginu najdete zde: <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781/a>';
 ?>
