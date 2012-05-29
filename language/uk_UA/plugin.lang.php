@@ -23,9 +23,17 @@
 $lang['mp_cache'] = 'Приховайте списки відтворення';
 $lang['mp_evidence_2'] = 'Пам\'ятати це';
 $lang['mp_evidence_title'] = 'Інформація';
-$lang['mp_help_q1'] = 'Де поставити mp3 ?';
+$lang['mp_help_q1'] = 'Куди вставити mp3 ?';
 $lang['mp_help_q2'] = 'Я додав mp3, але я не знайшов їх у списку відтворення!';
 $lang['mp_montre'] = 'Покажіть списки відтворення';
 $lang['mp_need_help'] = 'Потрібна допомога ?';
 $lang['mp_send'] = 'Надіслати';
+$lang['lien_titre'] = 'Слухати музику';
+$lang['mp_admin_folder'] = 'Папка';
+$lang['mp_admin_leg2'] = 'Опції плаґіну';
+$lang['mp_admin_leg3'] = 'Опції програвача';
+$lang['mp_admin_leg'] = 'Менеджер плейлисту';
+$lang['mp_admin_nm_edit'] = 'Редагувати назву';
+$lang['mp_admin_nm_pl'] = 'Назва плейлисту';
+$lang['mp_help_q4'] = 'Як цей плаґін працює ?';
 ?>
