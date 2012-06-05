@@ -130,5 +130,10 @@ Para criar uma playlists :
 <br/>- Antes de tudo, necessita uma pasta /music na pasta do plugin. IMPORTANTE !! (utilizadores Free não estão concernados pelo seguinte aviso) A pasta /music tem de ter todas as autorizações em leitura / escritura (chmod 777 ou rwxrwxrwx)
 <Br/>- Depois, deve criar outra pasta sob /music que vai conter mp3 e a playlist em .xml. Atenção : o nome da pasta e importante : Não use caráteres especiais para o nome da pasta
 <br/>- Clique em \'sincronizar com /music\' : as pastas sob /music devem conter mp3. As playlists com a extinção xml são criadas com o mesmo nome que a pasta.
-<br/>- Recepção do formulário : serve para ter uma breve descrição que será utilizada como ligação para tocar a playlist, na janela do leitor.';
+<br/>- Recepção do formulário : serve para ter uma breve descrição que será utilizada como ligação para tocar a playlist, na janela do leitor. Deixe vazio uma parte do texto e a palylist não será salvada na base de dados
+<br/>- Envio do formulário e salvação na base de dados : Pode depois adir uma miniatura pelo upload o ligação: Também pode manda-la directamente pelo ftp com como nome [nome do ficheiro].jpg
+<br/><br/>
+Para gerir uma playlist : 
+<br/>Clique na segunda ícone ao lado da playlist
+<br/>Siga os passos : não esqueça a ultima !';
 ?>
