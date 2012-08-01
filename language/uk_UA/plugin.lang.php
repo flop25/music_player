@@ -36,4 +36,10 @@ $lang['mp_admin_leg'] = 'Менеджер плейлисту';
 $lang['mp_admin_nm_edit'] = 'Редагувати назву';
 $lang['mp_admin_nm_pl'] = 'Назва плейлисту';
 $lang['mp_help_q4'] = 'Як цей плаґін працює ?';
+$lang['mp_adm_ed_sup_ok'] = 'Ви впевнені ?';
+$lang['mp_adm_edit_1'] = 'Опис тексту';
+$lang['mp_adm_edit_2'] = 'Список відтворення';
+$lang['mp_adm_edit_3'] = 'Синхронізувати список відтворення';
+$lang['mp_adm_envoi_1'] = 'Опис';
+$lang['mp_adm_envoi_2'] = 'містить';
 ?>
