@@ -20,7 +20,7 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['mp_help_div2'] = 'Çalma listenizi güncellemeyin.';
+$lang['mp_help_div2'] = 'Çalma listenizi güncellemeyin. Çalma listesinin yanındaki 2. ikona (\'Müziği yönet\') tıklayın ve son adımda "Değişiklikleri gönder" seçeneğini uygulayın.';
 $lang['mp_help_div3'] = 'Çalma listesi yanına ekleyebileceğiniz 3. ikon (\'Küçük resimleri yönet\') ile ilgilidir.';
 $lang['mp_help_div8'] = 'Yeni : Müzik çalara erişimi kısıtlayabilirsiniz. Nitekim, eğer \'music_group\' gibi bir grup oluşturursanız sadece bu grup üyeleri müzik dinleyebilir. Eğer grup yoksa (varsayılan durumdur) herkes müzik çalara erişebilir.';
 $lang['mp_help_div6'] = 'Evet : 1.3 \'den beri podcast ve uzak çalma listesi için bir blok daha ilave edilmiştir. Dikkat edin  : çalma listesi mutlaka Atom, Xspf (eklenti tarafından kullanılan), yada RSS formatında olmalıdır. (podcastlar her zaman RSS)';
@@ -124,4 +124,17 @@ $lang['mp_adm_envoi_2'] = 'içermekte';
 $lang['mp_adm_et2_nbr'] = 'Eklenen adet:';
 $lang['mp_adm_et2_rg'] = 'Satır ekle:';
 $lang['mp_adm_et2_rg2'] = '(eğer boş ise, çalma listesinin altı)';
+$lang['mp_help_div4'] = 'Bu eklenti, çalma listesi yaratmanızı, yönetmenizi, müzik çaları ve açılır penceresini kişiselleştirmenizi sağlar.<br/>
+Çalma listesi oluşturmak için:<br/>
+- herşeyden önce, eklenti dizininde /music dizinine ihtiyacınız vardır. ÖNEMLİ!!(Ücretsiz kullanıcılar aşağıdaki bildirim sizin için değildir) /music dizini tüm yazma/okuma yetkilerine sahip olmalıdır (chmod 777 yada rwxrwxrwx).
+<br/>- Sonra, /music dizininde .xml uzantılı çalma listenizi ve mp3 dosyalarını içerecek başka bir dizin yaratın. Dikkatli olun : dizin izimleri önemlidir : bundan dolayı dizin adlarında ÖZEL KARAKTER KULLANMAYIN
+
+<br/>- Then click on \'Synchronise with /music\' : folders in /music have been listed with mp3 files. Playlists with xml extension have been created with the same name of the folder.
+<br/>- reception of the form: it is used to have a small descriptive text which will be used as link to play the playlist, in the window of the player. Leave empty a field text and the playlsit concerned will not be recorded in data base
+<br/>- sending of the form and recording in data base: then you can add a miniature by upload or link: you can even directly send it by ftp with for name \'[name of the file] .jpg\'?
+<br /><br />
+Çalma listesini yönetmek için:
+<br/>- Çalma listesi yanındaki 2. ikona tıklayın
+<br/>- Sonra ilgili adımları takip edin : Sonuncuyu unutmayın !';
+$lang['mp_admin_3_opt10'] = 'Stillerin otomatik yönetimini etkinleştirin: Müzik çalara uygulanan stiller kullanıcının biri olacaktır. Eğer bu seçenek etkinsizleştirilmiş ise veya müzik çalar için kullanıcının stili yok ise bir tane varsayılan emsal uygulanır.';
 ?>
