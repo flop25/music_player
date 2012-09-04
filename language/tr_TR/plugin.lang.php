@@ -128,10 +128,9 @@ $lang['mp_help_div4'] = 'Bu eklenti, çalma listesi yaratmanızı, yönetmenizi,
 Çalma listesi oluşturmak için:<br/>
 - herşeyden önce, eklenti dizininde /music dizinine ihtiyacınız vardır. ÖNEMLİ!!(Ücretsiz kullanıcılar aşağıdaki bildirim sizin için değildir) /music dizini tüm yazma/okuma yetkilerine sahip olmalıdır (chmod 777 yada rwxrwxrwx).
 <br/>- Sonra, /music dizininde .xml uzantılı çalma listenizi ve mp3 dosyalarını içerecek başka bir dizin yaratın. Dikkatli olun : dizin izimleri önemlidir : bundan dolayı dizin adlarında ÖZEL KARAKTER KULLANMAYIN
-
-<br/>- Then click on \'Synchronise with /music\' : folders in /music have been listed with mp3 files. Playlists with xml extension have been created with the same name of the folder.
-<br/>- reception of the form: it is used to have a small descriptive text which will be used as link to play the playlist, in the window of the player. Leave empty a field text and the playlsit concerned will not be recorded in data base
-<br/>- sending of the form and recording in data base: then you can add a miniature by upload or link: you can even directly send it by ftp with for name \'[name of the file] .jpg\'?
+<br/>- Daha sonra \'/music ile eşitle\' : /music dizini altındaki mp3 dosyaları listelenir. Dizin adı ile aynı olan xml çalma listesi oluşturulur.
+<br/>- formun alınması: müzik çalar penceresinde açıklayıcı yazı linki oluşturmak için kullanılır. Boş bırakılan yazı alanları veri tabanına kaydedilmez.
+<br/>- formun gönderilmesi ve veri tabanına kayıt: bir minyatür resim linki veya yüklemesi yapabilirsiniz: direk ftp ile gönderebilirsiniz\'[dosya adı] .jpg\'?
 <br /><br />
 Çalma listesini yönetmek için:
 <br/>- Çalma listesi yanındaki 2. ikona tıklayın
