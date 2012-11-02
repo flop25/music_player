@@ -22,8 +22,8 @@ $lang['mp_help_q7'] = "Non ho trovato la risposta qui / Ho altri problemi";
 $lang['mp_help_q8'] = "Nuovo : potete limitare i diritti per l'ascolto";
 
 $lang['mp_help_div1'] = "Gli mp3 devono essere messi nella cartella Music del plugin come questa \"[directory di pwg]/plugins/music_player/music/[nuova playlist]/\". E' consigliato ordinare le playlists per artista (music/moby/go.pm3), o mettere il nome dell'artista direttamente nel file mp3 (music/electro/moby-go.pm3)";
-$lang['mp_help_div2'] = "Non hai aggiornato la playlist: per farlo clikka sulla 2° icona ('Gestione musica') vicino la playlist, dopo, nell'ultimo passaggio fai 'Salva modifiche'";
-$lang['mp_help_div3'] = "E' un'immagine che puoi aggiungere clikkando sulla 3° icona ('Gestione immagini') vicino la playlist";
+$lang['mp_help_div2'] = 'Non hai aggiornato la playlist: per farlo clicca sulla 2° icona (\'Gestione musica\') vicino la playlist, dopo, nell\'ultimo passaggio fai \'Salva modifiche\'';
+$lang['mp_help_div3'] = 'E\' un\'immagine che puoi aggiungere cliccando sulla 3° icona (\'Gestione immagini\') vicino la playlist';
 $lang['mp_help_div4'] = "Questo plugin ti permette di creare e modificare playlists, di personalizzare l'aspetto del lettore e del suo popup.<br />
 Per creare una playlist:
 <br />- Prima di tutto assicurati di avere una cartella chiamata /music nella cartella del plugin. IMPORTANTE !! La cartella /music deve avere tutte le autorizzazioni in scrittura/lettura, in altre parole, un CHMOD di 777 o rwxrwxrwx.
@@ -41,7 +41,7 @@ $lang['mp_help_div7'] = 'Puoi trovare il supporto ufficiale del plugin qui (in l
 $lang['mp_help_div8'] = "Nuovo : potete limitare i diritti per l'ascolto. Infatti, se create il gruppo 'music_group', solo gli utenti di questo gruppo potranno sentire la musica. Se il gruppo non esiste (di default), tutti potranno accedere al lettore";
 
 $lang['mp_admin_leg'] = 'Gestione Playlists';
-$lang['mp_admin_tt_synchro'] = 'Sincronizza con la directory /music';
+$lang['mp_admin_tt_synchro'] = 'Sincronizza con la cartella /music';
 $lang['mp_admin_folder'] = 'Directory';
 $lang['mp_admin_nm_pl'] = 'Nome della playlist';
 $lang['mp_admin_nm_edit'] = 'Modifica nome';
