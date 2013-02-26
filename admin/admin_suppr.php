@@ -25,12 +25,12 @@ elseif ($_POST['envoi']=="suppr")
  {
   $query = 'SELECT type FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_POST['id'].'\') ;';
   $result = pwg_query($query);
-  $typ = mysql_fetch_assoc($result);
+  $typ = pwg_db_fetch_assoc($result);
   if ($typ['type']=="local")
   {
     $query = 'SELECT url FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_POST['id'].'\') ;';
     $result = pwg_query($query);
-    $dt = mysql_fetch_assoc($result);
+    $dt = pwg_db_fetch_assoc($result);
     $filename="./plugins/music_player/music/".$dt['url']."/";
     if (file_exists($filename))
     {

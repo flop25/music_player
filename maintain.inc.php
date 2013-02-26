@@ -57,7 +57,7 @@ function plugin_activate()
           SELECT COUNT(*) AS result FROM '.$prefixeTable.'mp_playlist
           WHERE type=""
   ;';
-  $data_table = mysql_fetch_array(pwg_query($query));
+  $data_table = pwg_db_fetch_array(pwg_query($query));
   $exist = $data_table['result'];
   if ( $exist != 0 )
   {
@@ -66,7 +66,7 @@ function plugin_activate()
             WHERE type=""
     ;';
     $result = pwg_query($query);
-    while ($data = mysql_fetch_assoc($result))
+    while ($data = pwg_db_fetch_assoc($result))
     {
      $query = '
      UPDATE '.$prefixeTable.'mp_playlist
@@ -82,7 +82,7 @@ function plugin_activate()
 SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
 WHERE param IN (\'mp_lecteur\')
 ;';
- $data_table = mysql_fetch_array(pwg_query($query));
+ $data_table = pwg_db_fetch_array(pwg_query($query));
  $exist = $data_table['result'];
  if ( $exist == 0 )
  {
@@ -97,7 +97,7 @@ VALUES
 SELECT value FROM '.CONFIG_TABLE.'
 WHERE param IN (\'mp_lecteur\')
 ;';
- $data_conf = mysql_fetch_array(pwg_query($query));
+ $data_conf = pwg_db_fetch_array(pwg_query($query));
  $conf=explode(',', $data_conf['value']);
  $nbr=count($conf);
  
@@ -118,7 +118,7 @@ $query = '
           SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
           WHERE param IN (\'mp_plugin\')
           ;';
-$data_table = mysql_fetch_array(pwg_query($query));
+$data_table = pwg_db_fetch_array(pwg_query($query));
 $exist = $data_table['result'];
   if ( $exist == 0 )
   {
@@ -133,7 +133,7 @@ $exist = $data_table['result'];
     SELECT value FROM '.CONFIG_TABLE.'
     WHERE param IN (\'mp_plugin\')
     ;';
-    $data_conf = mysql_fetch_array(pwg_query($query));
+    $data_conf = pwg_db_fetch_array(pwg_query($query));
     $conf=explode(',', $data_conf['value']);
     $nbr=count($conf);
     

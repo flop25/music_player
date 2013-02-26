@@ -17,7 +17,7 @@ global $prefixeTable;
 $query = '
 SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
   WHERE name IN (\'music_group\') ;';
-$data_grp = mysql_fetch_array(pwg_query($query));
+$data_grp = pwg_db_fetch_array(pwg_query($query));
 $exist_group = $data_grp['result'];   
 if ( $exist_group == 1 )
 {
@@ -25,14 +25,14 @@ if ( $exist_group == 1 )
 	$query = 'SELECT group_id FROM '.USER_GROUP_TABLE.' WHERE user_id IN (\''.$user['id'].'\');';
 	$result = pwg_query($query);
 	$grp_id = array();
-	while ($row = mysql_fetch_assoc($result)) {
+	while ($row = pwg_db_fetch_assoc($result)) {
 		array_push($grp_id, $row);
 	}
 	
 	foreach ($grp_id as $grp)
 	{
 		$query = 'SELECT id FROM '.GROUPS_TABLE.' WHERE name IN (\'music_group\') ;';
-		$rep = mysql_fetch_array(pwg_query($query));
+		$rep = pwg_db_fetch_array(pwg_query($query));
 		if ($rep['id']==$grp['group_id'] )
 		{
 			$display=1;
@@ -95,7 +95,7 @@ $template->assign(
 $playlist = array();
 $query = 'SELECT url, texte FROM '.MP_PLAYLIST.' WHERE type IN (\'local\') ORDER BY id ;';
 $result = pwg_query($query);
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = pwg_db_fetch_assoc($result)) {
     array_push($playlist, $row);
 }
 
@@ -111,7 +111,7 @@ foreach ($playlist as $list) {
 $pl_ex = array();
 $query = 'SELECT id, texte FROM '.MP_PLAYLIST.' WHERE type IN (\'externe\') ORDER BY id ;';
 $result = pwg_query($query);
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = pwg_db_fetch_assoc($result)) {
     array_push($pl_ex, $row);
 }
 
@@ -174,7 +174,7 @@ if ($conf_lecteur[8]=='true') $autoscroll=$conf_lecteur[8]; else $autoscroll="fa
 if ($conf_lecteur[7]!='0')
 {
 $rep = pwg_query('SELECT url FROM '.MP_PLAYLIST.' WHERE id IN (\''.$conf_lecteur[7].'\') ;');
-$pl = mysql_fetch_array($rep);
+$pl = pwg_db_fetch_array($rep);
 $url=$pl['url'];
 $url='music/'.$url.'/'.$url.'.xml';
 $autostart='true';

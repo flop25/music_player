@@ -10,7 +10,7 @@ global $prefixeTable;
 
   $query = 'SELECT url, texte FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_GET['id'].'\') ;';
   $result = pwg_query($query);
-  $data = mysql_fetch_assoc($result);
+  $data = pwg_db_fetch_assoc($result);
 
 
 // +--------------------------------------------------------+

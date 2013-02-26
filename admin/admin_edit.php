@@ -31,7 +31,7 @@ if (isset($_GET['id']))
 {
   $query = 'SELECT texte FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_GET['id'].'\') ;';
   $result = pwg_query($query);
-  $data = mysql_fetch_assoc($result);
+  $data = pwg_db_fetch_assoc($result);
   $txt = stripslashes($data['texte']);
   $template->append('edit_txt',
                                array('TXT'=>$txt, 'ID'=>$_GET['id']) );
@@ -79,7 +79,7 @@ if (isset($_GET['ex_id']))
 {
   $query = 'SELECT url, texte FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_GET['ex_id'].'\') ;';
   $result = pwg_query($query);
-  $data = mysql_fetch_assoc($result);
+  $data = pwg_db_fetch_assoc($result);
   $txt = stripslashes($data['texte']);
   $url = stripslashes($data['url']);
   $template->append('edit_ex',
@@ -110,7 +110,7 @@ if (isset($_GET['music_id']))
 {
   $query = 'SELECT pl_id, nom, url FROM '.MP_MUSIC.' WHERE id IN (\''.$_GET['music_id'].'\') ;';
   $result = pwg_query($query);
-  $data = mysql_fetch_assoc($result);
+  $data = pwg_db_fetch_assoc($result);
   $nom = stripslashes($data['nom']);
   $url = stripslashes($data['url']);
   $template->append('edit_music',
@@ -130,7 +130,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=="suppr")
 {
   $query = 'SELECT pl_id, url, rang FROM '.MP_MUSIC.' WHERE id IN (\''.$_POST['id'].'\') ;';
   $result = pwg_query($query);
-  $suppr = mysql_fetch_assoc($result);
+  $suppr = pwg_db_fetch_assoc($result);
   $url = stripslashes($suppr['url']);
   
   if(preg_match('`^music`',$url))
@@ -141,17 +141,17 @@ if (isset($_POST['envoi']) and $_POST['envoi']=="suppr")
   }
 
   $rep = pwg_query('SELECT MAX(rang) AS max FROM '.MP_MUSIC.' WHERE pl_id='.$suppr['pl_id'].';');
-  $rang = mysql_fetch_assoc($rep);
+  $rang = pwg_db_fetch_assoc($rep);
 
   $i = $suppr['rang'] + 1;
   while ($i<=$rang['max']) {
     $rep = pwg_query('SELECT COUNT(*) AS result FROM '.MP_MUSIC.' WHERE rang IN (\''.$i.'\') AND pl_id IN (\''.$suppr['pl_id'].'\') ;');
-    $res = mysql_fetch_array($rep);
+    $res = pwg_db_fetch_array($rep);
     if ($res['result'] != 0)
     {
       $query = 'SELECT id FROM '.MP_MUSIC.' WHERE rang IN (\''.$i.'\') AND pl_id IN (\''.$suppr['pl_id'].'\') ;';
       $result = pwg_query($query);
-	  $meme = mysql_fetch_assoc($result);
+	  $meme = pwg_db_fetch_assoc($result);
 	  $i_inf = $i - 1 ;
 	  $query = 'UPDATE '.MP_MUSIC.' SET rang=\''.$i_inf.'\' WHERE id IN (\''.$meme['id'].'\') ;';
       pwg_query($query);
@@ -165,7 +165,7 @@ if (isset($_GET['suppr']))
 {
   $query = 'SELECT pl_id, nom FROM '.MP_MUSIC.' WHERE id IN (\''.$_GET['suppr'].'\') ;';
   $result = pwg_query($query);
-  $data = mysql_fetch_assoc($result);
+  $data = pwg_db_fetch_assoc($result);
   $template->append('suppr',
                                array('ID'=>$_GET['suppr'],
 							         'PL'=>$data['pl_id']
@@ -236,7 +236,7 @@ if (isset($_GET['music']))//affichage du contenu de la playlist
 if (isset($_POST['envoi']) and $_POST['envoi']=='ajout')
 {
  $rep = pwg_query('SELECT MAX(rang) AS max FROM '.MP_MUSIC.' WHERE pl_id='.$_GET['music'].';');
- $rg = mysql_fetch_assoc($rep);
+ $rg = pwg_db_fetch_assoc($rep);
  for($i=1; $i <= $_POST['nbr'] ; $i++)
  {
 	 if ( $_POST['url_'.$i.'']=="" ) {	 $mp_msgs[] = $lang['mp_msg_err_aj1'];	 continue;}
@@ -251,7 +251,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='ajout')
 	  //[ on doit décaler les autres pour insérer le nouveau
       $query = 'SELECT id, rang FROM '.MP_MUSIC.' WHERE pl_id='.$_GET['music'].' AND rang>='.$rang.' ORDER BY rang ;';
       $result = pwg_query($query);
-      while ($sup = mysql_fetch_assoc($result)){
+      while ($sup = pwg_db_fetch_assoc($result)){
 	  
 	    $n_rang = $sup['rang'] + 1 ;
         $query = '
@@ -283,7 +283,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
 
   $query = 'SELECT url FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_POST['id_playlist'].'\') ;';
   $result = pwg_query($query);
-  $dt = mysql_fetch_assoc($result);
+  $dt = pwg_db_fetch_assoc($result);
 
 /////[ recup music 
 	 $fichier = array();
@@ -312,7 +312,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
        $nom_fichier = addslashes($nom_fichier);
 	   //$rep = pwg_query('SELECT COUNT(*) AS result FROM '.MP_MUSIC.' WHERE pl_id='.$_POST['id_playlist'].' AND url REGEXP \''.$nom_fichier.'\' ;');like '%".$recherche."%'"
 	   $rep = pwg_query('SELECT COUNT(*) AS result FROM '.MP_MUSIC.' WHERE pl_id='.$_POST['id_playlist'].' AND url LIKE \'%'.$nom_fichier.'%\' ;');
-       $res = mysql_fetch_array($rep);
+       $res = pwg_db_fetch_array($rep);
 	   if ($res['result']==0)
 	   {
 	   array_push($fichier, $file);
@@ -323,7 +323,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
      }//while
   
   $rep = pwg_query('SELECT MAX(rang) AS max FROM '.MP_MUSIC.' WHERE pl_id='.$_POST['id_playlist'].';');
-  $rang = mysql_fetch_assoc($rep);
+  $rang = pwg_db_fetch_assoc($rep);
   $n=$rang['max']+1;
 
 ///////[ Ajout ds bdd
@@ -349,7 +349,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_bdd')
 //////[ Fichiers supprimés ?
   $query = 'SELECT * FROM '.MP_MUSIC.' WHERE pl_id='.$_GET['music'].' ORDER BY rang ;';
   $result = pwg_query($query);
-  while ($music = mysql_fetch_assoc($result)){
+  while ($music = pwg_db_fetch_assoc($result)){
   $url = stripslashes($music['url']);
   
    if(preg_match('`^music`', $music['url'])) {
@@ -370,7 +370,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_xml')
 {
   $query = 'SELECT url FROM '.MP_PLAYLIST.' WHERE id IN (\''.$_POST['id_playlist'].'\') ;';
   $result = pwg_query($query);
-  $dt = mysql_fetch_assoc($result);
+  $dt = pwg_db_fetch_assoc($result);
 
   $query = 'SELECT * FROM '.MP_MUSIC.' WHERE pl_id='.$_GET['music'].' ORDER BY rang ;';
   $result = pwg_query($query);
@@ -382,7 +382,7 @@ if (isset($_POST['envoi']) and $_POST['envoi']=='synchro_xml')
       $_xml .="<playlist version=\"1\" xmlns=\"http://xspf.org/ns/0/\">\r\n";
       $_xml .="\t<trackList>\r\n";
 
-      while ($music = mysql_fetch_assoc($result)){
+      while ($music = pwg_db_fetch_assoc($result)){
 	    $nom_fichier=stripslashes($music['nom']);
 	    $url=stripslashes($music['url']);
         $_xml .="\t\t<track>\r\n";
@@ -407,7 +407,7 @@ if (isset($_GET['music']))//affichage du contenu de la playlist
 {
   $query = 'SELECT texte FROM '.MP_PLAYLIST.' WHERE id='.$_GET['music'].' ;';
   $result = pwg_query($query);
-  $playlist = mysql_fetch_assoc($result);
+  $playlist = pwg_db_fetch_assoc($result);
   
   $txt = stripslashes($playlist['texte']);
   $template->assign(  array(
@@ -417,12 +417,12 @@ if (isset($_GET['music']))//affichage du contenu de la playlist
   $template->assign(array('playlist_TEXTE'=>$txt, 'playlist_ID'=>$_GET['music']));
 
   $rep = pwg_query('SELECT MAX(rang) AS max FROM '.MP_MUSIC.' WHERE pl_id='.$_GET['music'].';');
-  $rang = mysql_fetch_assoc($rep);
+  $rang = pwg_db_fetch_assoc($rep);
     
   $query = 'SELECT * FROM '.MP_MUSIC.' WHERE pl_id='.$_GET['music'].' ORDER BY rang ;';
   $result = pwg_query($query);
   $num=0;
-   while ($music = mysql_fetch_assoc($result)){
+   while ($music = pwg_db_fetch_assoc($result)){
     $music_url = stripslashes($music['url']);
     $music_nom = stripslashes($music['nom']);
 	

@@ -43,7 +43,7 @@ if (isset($_POST['envoi']) and $_POST['envoi'] == "synchro")
 
 	   ///on vérife si ils n'existe pas déjà
 	   $rep = pwg_query('SELECT COUNT(*) AS result FROM '.MP_PLAYLIST.' WHERE url IN (\''.$value.'\') ;');
-       $res = mysql_fetch_array($rep);
+       $res = pwg_db_fetch_array($rep);
 	   if ($res['result']!=0)
 	   {
 		   $n--;
@@ -110,7 +110,7 @@ $template->assign_var_from_handle('ENVOI', 'envoi');
   }
   /// v 1.2 on ne cree que pour les nouveaux
   $rep = pwg_query('SELECT COUNT(*) AS result FROM '.MP_PLAYLIST.' WHERE url IN (\''.$value.'\') ;');
-  $res = mysql_fetch_array($rep);
+  $res = pwg_db_fetch_array($rep);
   if ($res['result']!=0)
   {
     continue;
@@ -147,7 +147,7 @@ $template->assign_var_from_handle('ENVOI', 'envoi');
   $fichier_sql = addslashes($fichier_sql);
   ////[ maj de la bdd 
   $result = pwg_query('SELECT id FROM '.MP_PLAYLIST.' WHERE url IN (\''.$value.'\') ;');
-  $data = mysql_fetch_array($result);
+  $data = pwg_db_fetch_array($result);
   $query = '
 UPDATE '.MP_PLAYLIST.'
   SET music=\''.$fichier_sql.'\'
@@ -240,7 +240,7 @@ INSERT INTO '.MP_PLAYLIST.'
     natcasesort($fichier); //la fonction natcasesort( ) est la fonction de tri standard sauf qu'elle ignore la casse
 
     $result = pwg_query('SELECT id FROM '.MP_PLAYLIST.' WHERE url IN (\''.$_POST['url_'.$n.''].'\') ;');
-    $data_pl = mysql_fetch_assoc($result);
+    $data_pl = pwg_db_fetch_assoc($result);
 	$rang=1;
 
 	foreach($fichier as $file) {
@@ -282,7 +282,7 @@ INSERT INTO '.MP_PLAYLIST.'
      pwg_query($query);
 	 
      $result = pwg_query('SELECT id FROM '.MP_PLAYLIST.' WHERE url=\''.$url.'\' ;');
-     $data_pl = mysql_fetch_assoc($result);
+     $data_pl = pwg_db_fetch_assoc($result);
 	 
      $filename="./plugins/music_player/music/externe/".$data_pl['id'].".php";
      $rep="./plugins/music_player/music/externe";
@@ -311,7 +311,7 @@ INSERT INTO '.MP_PLAYLIST.'
 $playlist = array();
 $query = 'SELECT id, url, texte FROM '.MP_PLAYLIST.' WHERE type IN (\'local\') ORDER BY id ;';
 $result = pwg_query($query);
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = pwg_db_fetch_assoc($result)) {
     array_push($playlist, $row);
 }
 
@@ -332,7 +332,7 @@ foreach ($playlist as $list) {
 $playlist = array();
 $query = 'SELECT id, url, texte FROM '.MP_PLAYLIST.' WHERE type IN (\'externe\') ORDER BY id ;';
 $result = pwg_query($query);
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = pwg_db_fetch_assoc($result)) {
     array_push($playlist, $row);
 }
 
@@ -436,7 +436,7 @@ if ($conf_lecteur[10]=='true') { $various_style=$check; } else { $various_style=
 if ($conf_lecteur[7]!='0')
 {
 	$rep = pwg_query('SELECT texte FROM '.MP_PLAYLIST.' WHERE id IN (\''.$conf_lecteur[7].'\') ;');
-	$pl = mysql_fetch_array($rep);
+	$pl = pwg_db_fetch_array($rep);
 	$txt=$pl['texte'];
 }
 else {$txt="Defaut"; }
