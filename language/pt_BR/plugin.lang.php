@@ -120,4 +120,19 @@ $lang['mp_adm_etape_1'] = 'O primeiro passo (opcional)';
 $lang['mp_adm_etape_2'] = '2º passo (optionnal)';
 $lang['mp_adm_etape_3'] = '3º passo!';
 $lang['mp_adm_etape_4'] = '4º passo!';
+$lang['mp_help_div7'] = 'Você pode encontrar suporte para os plugins aqui: <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781/a>';
+$lang['mp_help_div8'] = 'Novo: você pode restringir os acessos do reprodutor. Na verdade, se você criar \'music_group\' do grupo, apenas os membros deste grupo serão capazes de ouvir a música. Se ele não existir (caso de defeito), todos podem acesso ao reprodutor';
+$lang['mp_help_div5'] = 'Sim: Para isso, vá para a lista de reprodução de sua escolha e, em duas etapas, adicione o arquivo. Tenha cuidado: Mesmo mp3 é no mesmo servidor que este plugin, você precisa escrever endereço html:// completo ';
+$lang['mp_help_div6'] = 'Sim: Desde 1,3 um bloco para podcast e distante lista de reprodução foram adicionados. Tenha cuidado: lista deve estar em Atom, xspf (uso pelo plugin), ou no formato RSS. (podcast são sempre RSS)';
+$lang['mp_help_div1'] = 'Mp3 devem ser colocados na pasta Música do plugin como este "[pasta PWG]/plugins/music_player/[nova lista de reprodução]/". Você deve fazer a sua escolha pela lista de reprodução do artista(music/moby/go.pm3), ou colocar o nome do artista diretamente no nome do arquivo(music/electro/moby-go.pm3)';
+$lang['mp_help_div4'] = 'Este plugin permite criar e gerenciar algumas listas de reprodução, personalizar leitor de música e seu pop-up <br./>
+Para criar uma lista de reprodução:
+<br/>- Primeiro de tudo, você precisa de uma pasta /música na pasta de plugin. IMPORTANTE! (Usuários grátis que ver aviso a seguir) pasta /música deve ter todos os privilégios escrever/ler (chmod 777 ou rwxrwxrwx).
+<br/>- Em seguida, crie outra pasta no /música que conterá mp3 e lista de reprodução com extenção .xml. Tenha cuidado: nome da pasta é importante: Portanto, NÃO USE CARACTERES ESPECIAIS para o nome da pasta
+<br/>- Em seguida, clique em "Sincronizar com /música\': nas pastas /música serão listados os arquivos mp3. Listas de reprodução serão criadas com a estensão .xml com o mesmo nome da pasta.
+<br/>- forma de recepção: utiliza-se ter um pequeno texto descritivo que irá ser utilizada como ligação para reproduzir a lista, na janela do leitor. Deixe esvaziar um campo de texto e a lista de reprodução não serão registradas no banco de dados
+<br/>- envio do formulário e gravação da base de dados: então você pode adicionar uma miniatura por envio ou link: você pode até enviá-lo diretamente por ftp com o nome \'[nome do arquivo] .jpg\'?
+<br/><br/>
+<br/>- Clique no ícone perto da segunda lista
+<br/>- Então, siga estes passos: Não esqueça o último!';
 ?>
