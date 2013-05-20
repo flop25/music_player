@@ -3,7 +3,7 @@
 function plugin_install()
 {
   global $prefixeTable;
-  $q = 'CREATE TABLE ' . $prefixeTable . 'mp_playlist (
+  $q = 'CREATE TABLE IF NOT EXISTS ' . $prefixeTable . 'mp_playlist (
         id BIGINT NOT NULL AUTO_INCREMENT ,
         type VARCHAR( 50 ) NOT NULL ,
         url VARCHAR( 255 ) NOT NULL ,
@@ -12,7 +12,7 @@ function plugin_install()
         );
   ';
   pwg_query($q);
-  $q = 'CREATE TABLE ' . $prefixeTable . 'mp_music (
+  $q = 'CREATE TABLE IF NOT EXISTS ' . $prefixeTable . 'mp_music (
         id BIGINT NOT NULL AUTO_INCREMENT ,
         pl_id BIGINT NOT NULL ,
         rang BIGINT NOT NULL ,
@@ -44,7 +44,7 @@ function plugin_activate()
 ///[ update from 1.2 ]
   $q = pwg_query('SHOW COLUMNS FROM '.$prefixeTable.'mp_playlist');
   $champ = array();
-  while ($rep = mysql_fetch_row($q))
+  while ($rep = pwg_db_fetch_row($q))
   {
     array_push($champ, $rep[0]);
   }
