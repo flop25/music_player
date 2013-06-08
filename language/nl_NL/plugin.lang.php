@@ -90,4 +90,7 @@ $lang['mp_msg_admin_3_2'] = 'Gemaakt';
 $lang['mp_help_q4'] = 'Hoe werkt deze plugin?';
 $lang['mp_help_q6'] = 'Is het mogelijk om podcasts toe te voegen?';
 $lang['mp_linkimg_ok'] = 'Afbeelding opgeslagen';
+$lang['mp_adm_et2_txt'] = 'Voeg externe mp3 toe.';
+$lang['mp_adm_et2_nbr'] = 'Aantal toegevoegd:';
+$lang['lien_expl'] = 'Toon de ingebouwde pop-up speler';
 ?>
