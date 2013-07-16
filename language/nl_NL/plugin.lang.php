@@ -20,7 +20,7 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['lien_titre'] = 'Muzieklijst';
+$lang['lien_titre'] = 'Beluister muziek';
 $lang['mp_admin_min'] = 'Beheer verkleinde afbeelding';
 $lang['mp_admin_nm_edit'] = 'Bewerk naam';
 $lang['mp_admin_nm_pl'] = 'Naam van de afspeellijst';
@@ -93,4 +93,22 @@ $lang['mp_linkimg_ok'] = 'Afbeelding opgeslagen';
 $lang['mp_adm_et2_txt'] = 'Voeg externe mp3 toe.';
 $lang['mp_adm_et2_nbr'] = 'Aantal toegevoegd:';
 $lang['lien_expl'] = 'Toon de ingebouwde pop-up speler';
+$lang['mp_help_q2'] = 'Ik heb mp3\'s toegevoegd maar kan ze niet in de afspeellijst terugvinden!';
+$lang['mp_help_q7'] = 'Ik kan het antwoord hier niet vinden / Ik heb problemen';
+$lang['mp_help_q8'] = 'Nieuw: je kan de toegang tot de muziekspeler beperken';
+$lang['mp_info_min'] = '( voorbeeld afbeelding is optoneel )';
+$lang['mp_msg_admin_6'] = 'plugin configuratie opgeslagen';
+$lang['mp_msg_admin_5'] = 'configuratie van de muziekspeler opgeslagen';
+$lang['mp_msg_admin1'] = 'niets toegevoegd';
+$lang['mp_msg_admin_4'] = 'toevoegen vanaf';
+$lang['mp_montre'] = 'toon afspeellijst';
+$lang['mp_help_div7'] = 'Plugin ondersteuning kan je hier vinden : <a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781/a> 
+';
+$lang['mp_admin_3_opt9'] = 'standaard style toegepast';
+$lang['mp_admin_3_opt7'] = 'automatische start van de afspeellijst (zonder zijbalk)';
+$lang['mp_admin_3_opt6'] = 'lees de afspeellijst aan het begin';
+$lang['mp_admin_2_opt3'] = 'toon de "footer", copyright';
+$lang['mp_adm_suppr_3'] = 'verwijder de afspeellijst uit de database, EN de folder (mp3 en de xml bestanden worden gewist)';
+$lang['mp_adm_suppr_2'] = 'verwijder de afspeellijst uit de database (volgende synchronisatie wordt deze opnieuw aangemaakt)';
+$lang['mp_adm_et2_rg2'] = '(wanneer leeg, einde van de afspeellijst)';
 ?>
