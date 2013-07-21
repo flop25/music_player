@@ -111,4 +111,5 @@ $lang['mp_admin_2_opt3'] = 'toon de "footer", copyright';
 $lang['mp_adm_suppr_3'] = 'verwijder de afspeellijst uit de database, EN de folder (mp3 en de xml bestanden worden gewist)';
 $lang['mp_adm_suppr_2'] = 'verwijder de afspeellijst uit de database (volgende synchronisatie wordt deze opnieuw aangemaakt)';
 $lang['mp_adm_et2_rg2'] = '(wanneer leeg, einde van de afspeellijst)';
+$lang['mp_adm_ed_sup_info'] = 'Indien het een bestand in de \'/music\'-directorie betreft, wordt het bestand verwijderd : in andere gevallen worden alleen de database-gegevens verwijderd. ';
 ?>
