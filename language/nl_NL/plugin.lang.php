@@ -114,4 +114,6 @@ $lang['mp_adm_et2_rg2'] = '(wanneer leeg, einde van de afspeellijst)';
 $lang['mp_adm_ed_sup_info'] = 'Indien het een bestand in de \'/music\'-directorie betreft, wordt het bestand verwijderd : in andere gevallen worden alleen de database-gegevens verwijderd. ';
 $lang['mp_admin_2_opt1'] = 'Toon plugin als blok in het menu';
 $lang['mp_help_q1'] = 'Waar moet de MP3 opgeslagen worden';
+$lang['mp_help_div8'] = 'Nieuw: je kan de toegang tot de speler beperken door de groep \'music_group\' toe te voegen, alleen leden van deze groep kunnen de speler gebruiken. Als deze groep niet aanwezig is, kan iedereen de MP3 speler gebruiken.';
+$lang['mp_help_q5'] = 'Hoe kan ik een remote mp3 in een andere directory toevoegen?';
 ?>
