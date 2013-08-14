@@ -118,4 +118,11 @@ $lang['mp_admin_3_opt1_2'] = '总宽度';
 $lang['mp_admin_3_opt2_1'] = '播放列表高度';
 $lang['mp_admin_3_opt3_1'] = '显示播放列表缩略图';
 $lang['mp_admin_3_opt3_2'] = '缩略图宽度';
+$lang['mp_help_div8'] = '最新：您可以限制播放器的访问权限。亦即，如果创建一个\'music_group\'组，则只有该组成员才能听到音乐。如果组不存在（默认设置），则所有人都可访问播放器。';
+$lang['mp_help_div6'] = '是的：从1.3版开始，添加了podcast和远程播放列表界面。注意：播放列表必须为Atom，Xspf（本插件就使用该格式），或 RSS 格式（podcast均为RSS）';
+$lang['mp_help_div7'] = '您可在此找到本插件的技术支持：<a href="http://forum.phpwebgallery.net/viewtopic.php?pid=68781"> http://forum.phpwebgallery.net/viewtopic.php?pid=68781</a>';
+$lang['mp_help_div5'] = '为此请打开第2步中您选择的播放列表，并添加您的文件。注意：即使mp3文件与此插件在同一台服务器上，您仍需填写包含http://的完整地址';
+$lang['mp_help_div3'] = '点击播放列表旁的第3个图标\'缩略图管理\'，您可以添加这张缩略图';
+$lang['mp_help_div2'] = '您没有更新播放列表：如需更新，请点击播放列表旁的第2个图标(\'管理音乐\')，最后点击\'提交修改\'。';
+$lang['mp_help_div1'] = 'Mp3 文件必须放在插件的Music文件夹中，如："[PWG folder]/plugins/music_player/music/[new playlist]/"。您需要将播放列表的顺序按艺术家排列(music/moby/go.pm3)，或将艺术家的名字直接写入文件名(music/electro/moby-go.pm3)';
 ?>
