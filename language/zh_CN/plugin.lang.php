@@ -92,7 +92,7 @@ $lang['mp_need_help'] = '需要帮助？';
 $lang['mp_ou'] = '或';
 $lang['mp_send'] = '发送';
 $lang['mp_uploadimg_ok'] = '图片已保存';
-$lang['mp_admin_tt_synchro'] = '与/音乐文件夹同步';
+$lang['mp_admin_tt_synchro'] = '同步 /music 文件夹';
 $lang['mp_cache'] = '隐藏播放列表';
 $lang['mp_evidence_2'] = '记住';
 $lang['mp_evidence_title'] = '信息';
@@ -124,5 +124,16 @@ $lang['mp_help_div7'] = '您可在此找到本插件的技术支持：<a href="h
 $lang['mp_help_div5'] = '为此请打开第2步中您选择的播放列表，并添加您的文件。注意：即使mp3文件与此插件在同一台服务器上，您仍需填写包含http://的完整地址';
 $lang['mp_help_div3'] = '点击播放列表旁的第3个图标\'缩略图管理\'，您可以添加这张缩略图';
 $lang['mp_help_div2'] = '您没有更新播放列表：如需更新，请点击播放列表旁的第2个图标(\'管理音乐\')，最后点击\'提交修改\'。';
-$lang['mp_help_div1'] = 'Mp3 文件必须放在插件的Music文件夹中，如："[PWG folder]/plugins/music_player/music/[new playlist]/"。您需要将播放列表的顺序按艺术家排列(music/moby/go.pm3)，或将艺术家的名字直接写入文件名(music/electro/moby-go.pm3)';
+$lang['mp_help_div1'] = 'Mp3 文件必须放在插件的 /music 文件夹中，如："[PWG folder]/plugins/music_player/music/[new playlist]/"。您需要将播放列表的顺序按艺术家排列(music/moby/go.pm3)，或将艺术家的名字直接写入文件名(music/electro/moby-go.pm3)';
+$lang['mp_help_div4'] = '本插件可创建并管理播放列表，个性化音乐播放器。<br />
+创建播放列表：
+<br />- 一、请确认在插件文件夹中有一个 /music 文件夹。重要！！（以下提醒不适用于普通用户） /music 文件夹必须有完全的读写权限，即 chmod 777或rwxrwxrwx。
+<br />- 二、在 /music 文件夹中创建包含mp3文件及.xml格式的播放列表文件。注意：文件夹名称很重要，请不要使用特殊字符给文件夹命名。
+<br />- 三、点击\'同步 /music 文件夹\'：folders in /music have been listed with mp3 files. xml格式的播放列表以与文件夹相同的名字被创建。
+<br/>- reception of the form: it is used to have a small descriptive text which will be used as link to play the playlist, in the window of the player. Leave empty a field text and the playlsit concerned will not be recorded in data base
+<br/>- sending of the form and recording in data base: then you can add a miniature by upload or link: you can even directly send it by ftp with for name \'[name of the file] .jpg\'?
+<br /><br />
+管理播放列表:
+<br />- 点击Click on 2nd icon near the playlist
+<br />- 然后一步步来：别忘了最后一步！';
 ?>
