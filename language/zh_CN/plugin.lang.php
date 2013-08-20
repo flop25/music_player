@@ -129,9 +129,9 @@ $lang['mp_help_div4'] = '本插件可创建并管理播放列表，个性化音�
 创建播放列表：
 <br />- 一、请确认在插件文件夹中有一个 /music 文件夹。重要！！（以下提醒不适用于普通用户） /music 文件夹必须有完全的读写权限，即chmod 777或rwxrwxrwx。
 <br />- 二、在 /music 文件夹中创建用来放置mp3文件及.xml格式的播放列表文件的子文件夹。注意：文件夹名称很重要，请不要使用特殊字符给文件夹命名。
-<br />- 三、点击\'同步 /music 文件夹\'： /music 中的文件夹have been listed with mp3 files. xml格式的播放列表以与文件夹相同的名字被创建。
-<br/>- reception of the form: 它是显示于播放器窗口的一小段文字，链接到播放列表用于it used to be a small descriptive text that will serve as a link to play the playlist in the player window。将文字区域留空，则相关播放列表将不会被数据库记录
-<br/>- sending of the form and recording in data base: 然后您可通过上传或链接添加一个miniature：甚至可以通过ftp以\'[文件名称].jpg\'为名称直接发送它?
+<br />- 三、点击\'同步 /music 文件夹\'： /music 中的文件夹中的mp3文件被列出，xml格式的播放列表以与文件夹相同的名字被创建。
+<br/>- reception of the form: 它是显示于播放器窗口的一小段描述性文字，链接到播放列表。将文字区域留空，则相关播放列表将不会被数据库记录
+<br/>- 发送表格并录入数据库：然后您可通过上传或链接添加一个miniature：甚至可以通过ftp以\'[文件名称].jpg\'为名称直接发送它?
 <br /><br />
 管理播放列表:
 <br />- 点击播放列表旁的第2个图标
