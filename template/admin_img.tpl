@@ -10,13 +10,13 @@
 </div>
  -->
 
-{foreach from=$envoi item=envoi}<!-- BEGIN envoi -->
+{foreach from=$envoi item=envoi_item}<!-- BEGIN envoi -->
 <fieldset>
 <legend>Upload</legend>
 <form action="" method="post" enctype="multipart/form-data">
   <input name="fichier" type="file" />
   <input type="hidden" name="ajout_image" value="upload" />
-  <input type="hidden" name="id" value="{$envoi.ID}" />
+  <input type="hidden" name="id" value="{$envoi_item.ID}" />
   <input type="submit" name="button" id="button" value="{'mp_send'|@translate}" />
 </form>
 </fieldset>
@@ -26,24 +26,24 @@
 <form action="" method="post">
   <input name="lien" type="text" id="textfield" size="50" value="http://" />
   <input type="hidden" name="ajout_image" value="lien" />
-  <input type="hidden" name="id" value="{$envoi.ID}" />
+  <input type="hidden" name="id" value="{$envoi_item.ID}" />
   <input type="submit" name="button2" id="button2" value="{'mp_send'|@translate}" />
 </form>
 </fieldset>
   {/foreach}<!-- END envoi -->
   
-  {foreach from=$miniature item=miniature}<!-- BEGIN miniature -->
+  {foreach from=$miniature item=miniature_item}<!-- BEGIN miniature -->
 <div align="center">
-  <img src="{$miniature.URL}" alt="La miniature de la playlist" />
+  <img src="{$miniature_item.URL}" alt="La miniature de la playlist" />
 <form action="" method="post">
   <input type="submit" name="suppr" id="suppr" value="{'delete'|@translate}" />
 {'mp_adm_info_img'|@translate}
 </form>
 </div>
   {/foreach}<!-- END miniature -->
-  {foreach from=$rien item=rien}<!-- BEGIN rien -->
+  {foreach from=$rien item=rien_item}<!-- BEGIN rien -->
 <div align="center">
-  {$rien.TXT}
+  {$rien_item.TXT}
 </div>
   {/foreach}<!-- END rien -->
 <p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin.php">{'mp_adm_return'|@translate}</a></p>

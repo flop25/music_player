@@ -7,7 +7,7 @@
 </div>
  -->
 
-{foreach from=$suppr item=suppr}<!-- BEGIN suppr -->
+{foreach from=$suppr item=suppr_item}<!-- BEGIN suppr -->
 <form action="" method="post" name="edit_txt">
   <p>{'mp_adm_suppr_1'|@translate}</p>
   <p>
@@ -17,7 +17,7 @@
     <input type="radio" name="type_suppr" id="type_suppr" value="suppr_folder" />
 {'mp_adm_suppr_3'|@translate}</p>
   <p align="center">
-    <input name="id" type="hidden" value="{$suppr.ID}" />
+    <input name="id" type="hidden" value="{$suppr_item.ID}" />
     <input name="envoi" type="hidden" value="suppr" />
     <input name="submit" value="OK" type="submit" />
   </p>

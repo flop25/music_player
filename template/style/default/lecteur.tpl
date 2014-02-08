@@ -39,8 +39,8 @@ display:none;
         <div id="cache" style="display:none" align="center">
           <a href="javascript:void(0)" onclick="document.getElementById('montre').style.display ='block';document.getElementById('cache').style.display ='none'">{'mp_cache'|@translate}</a><br />
           <ul>
-          {foreach from=$playlist item=playlist}<!-- BEGIN playlist -->
-            <li><a href="javascript:void(0)" onclick="javascript:loadFile({literal}{{/literal}file:'{$playlist.URL}'{literal}}{/literal})" >{$playlist.TEXTE}</a></li>
+          {foreach from=$playlist item=playlist_item}<!-- BEGIN playlist -->
+            <li><a href="javascript:void(0)" onclick="javascript:loadFile({literal}{{/literal}file:'{$playlist_item.URL}'{literal}}{/literal})" >{$playlist_item.TEXTE}</a></li>
           {/foreach}<!-- END playlist -->
           </ul>
         </div>

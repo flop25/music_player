@@ -70,8 +70,8 @@ createPlayer('wrapper1', 'placeholder1', 'player1', '{$URL}')
 <div id="cache" style="display:none" align="center">
   <a href="javascript:void(0)" onclick="document.getElementById('montre').style.display ='block';document.getElementById('cache').style.display ='none'">{'mp_cache'|@translate}</a><br />
   <ul>
-  {foreach from=$playlist item=playlist}<!-- BEGIN playlist -->
-    <li><a href="javascript:void(0)" onclick="javascript:createPlayer('wrapper1', 'placeholder1', 'player1', '{$playlist.URL}')" >{$playlist.TEXTE}</a></li>
+  {foreach from=$playlist item=playlist_item}<!-- BEGIN playlist -->
+    <li><a href="javascript:void(0)" onclick="javascript:createPlayer('wrapper1', 'placeholder1', 'player1', '{$playlist_item.URL}')" >{$playlist_item.TEXTE}</a></li>
   {/foreach}<!-- END playlist -->
   </ul>
 </div>

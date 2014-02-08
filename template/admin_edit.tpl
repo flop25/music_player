@@ -4,52 +4,52 @@
   </ul>
   <h2>Music player / {$PLAYLIST}</h2>
 </div>
-{foreach from=$edit_txt item=edit_txt}
+{foreach from=$edit_txt item=edit_txt_item}
 <form action="" method="post" name="edit_txt">
   {'mp_adm_edit_1'|@translate} :
-  <input name="texte" type="text" value="{$edit_txt.TXT}" maxlength="255" />
-  <input name="id" type="hidden" value="{$edit_txt.ID}" />
+  <input name="texte" type="text" value="{$edit_txt_item.TXT}" maxlength="255" />
+  <input name="id" type="hidden" value="{$edit_txt_item.ID}" />
   <input name="envoi" value="edit_txt" type="hidden" />
   <input name="submit" value="OK" type="submit" />
 </form>
 <p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin.php">{'mp_adm_return'|@translate}</a></p>
 {/foreach}
 
-{foreach from=$edit_ex item=edit_ex}
+{foreach from=$edit_ex item=edit_ex_item}
 <form action="" method="post" name="edit_ex">
   {'mp_adm_edit_1'|@translate} :
-  <input name="texte" type="text" value="{$edit_ex.TXT}" maxlength="255" />
+  <input name="texte" type="text" value="{$edit_ex_item.TXT}" maxlength="255" />
   <br />
   URL :
-  <input name="url" type="text" value="{$edit_ex.URL}" size="60" maxlength="255" />
-  <input name="id" type="hidden" value="{$edit_ex.ID}" />
+  <input name="url" type="text" value="{$edit_ex_item.URL}" size="60" maxlength="255" />
+  <input name="id" type="hidden" value="{$edit_ex_item.ID}" />
   <input name="envoi" value="edit_ex" type="hidden" />
   <input name="submit" value="OK" type="submit" />
 </form>
 <p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin.php">{'mp_adm_return'|@translate}</a></p>
 {/foreach}
 
-{foreach from=$suppr item=suppr}
-<form action="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$suppr.PL}" method="post" name="suppr">
+{foreach from=$suppr item=suppr_item}
+<form action="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$suppr_item.PL}" method="post" name="suppr">
   <input name="envoi" type="hidden" value="suppr" />
-  <input name="id" type="hidden" value="{$suppr.ID}" />
+  <input name="id" type="hidden" value="{$suppr_item.ID}" />
   <input name="submit" value="{'mp_adm_ed_sup_ok'|@translate}" type="submit" />
   {'mp_adm_ed_sup_info'|@translate}
 </form>
-<p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$suppr.PL}">{'mp_adm_return_2'|@translate}</a></p>
+<p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$suppr_item.PL}">{'mp_adm_return_2'|@translate}</a></p>
 {/foreach}
-{foreach from=$edit_music item=edit_music}
+{foreach from=$edit_music item=edit_music_item}
 <form action="" method="post" name="edit_music">
   Texte :
-  <input name="nom" type="text" value="{$edit_music.NOM}" size="40" maxlength="255" />
+  <input name="nom" type="text" value="{$edit_music_item.NOM}" size="40" maxlength="255" />
   <br />
   URL :
-  <input name="url" type="text" value="{$edit_music.URL}" size="80" maxlength="255" />
-  <input name="id" type="hidden" value="{$edit_music.ID}" />
+  <input name="url" type="text" value="{$edit_music_item.URL}" size="80" maxlength="255" />
+  <input name="id" type="hidden" value="{$edit_music_item.ID}" />
   <input name="envoi" type="hidden" value="edit_music" />
   <input name="submit" value="OK" type="submit" />
 </form>
-<p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$edit_music.PL}">{'mp_adm_return_2'|@translate}</a></p>
+<p><a href="admin.php?page=plugin&amp;section=music_player/admin/admin_edit.php&music={$edit_music_item.PL}">{'mp_adm_return_2'|@translate}</a></p>
 {/foreach}
 
 {if isset($etape_ID)}
@@ -72,15 +72,15 @@
   <input type="submit" name="button" id="button" value="OK" />
 </form>
 <form action="" method="post" name="edit_music">
-  {foreach from=$ajout item=ajout}<!-- BEGIN ajout -->
+  {foreach from=$ajout item=ajout_item}<!-- BEGIN ajout -->
   <fieldset>
   Texte :
-  <input name="nom_{$ajout.I}" type="text" size="40" maxlength="255" />
+  <input name="nom_{$ajout_item.I}" type="text" size="40" maxlength="255" />
   {'mp_adm_et2_rg'|@translate}
-  <input name="rang_{$ajout.I}" type="text" size="3" maxlength="20" />
+  <input name="rang_{$ajout_item.I}" type="text" size="3" maxlength="20" />
   {'mp_adm_et2_rg2'|@translate}<br />
   URL :
-  <input name="url_{$ajout.I}" type="text" size="80" maxlength="255" />
+  <input name="url_{$ajout_item.I}" type="text" size="80" maxlength="255" />
   </fieldset>
   {/foreach}
   <input name="nbr" type="hidden" value="{$etape_I}" />
@@ -105,32 +105,32 @@
       <td>{'mp_adm_thead6'|@translate}</td>
     </tr>
   </thead>
-  {foreach from=$music item=music}<!-- BEGIN music -->
-  <tr class="{$music.CLASS}">
-    <td>{$music.NOM}</td>
-    <td>{$music.FILE}</td>
+  {foreach from=$music item=music_item}<!-- BEGIN music -->
+  <tr class="{$music_item.CLASS}">
+    <td>{$music_item.NOM}</td>
+    <td>{$music_item.FILE}</td>
 	<td>
-    {if isset ($music.UP_RANG)}
+    {if isset ($music_item.UP_RANG)}
       <form action="" method="post">
-        <input name="rang" type="hidden" value="{$music.UP_RANG}" />
-        <input name="nouv_rang" type="hidden" value="{$music.UP_RANG_NEW}" />
+        <input name="rang" type="hidden" value="{$music_item.UP_RANG}" />
+        <input name="nouv_rang" type="hidden" value="{$music_item.UP_RANG_NEW}" />
         <input type="hidden" name="envoi" id="hiddenField" value="rang" />
         <input type="image" name="up" src="plugins/music_player/template/icon/page_top.png" />
       </form>
 	{/if}
     </td>
     <td>
-    {if isset ($music.D_RANG)}
+    {if isset ($music_item.D_RANG)}
       <form action="" method="post">
-        <input name="rang" type="hidden" value="{$music.D_RANG}" />
-        <input name="nouv_rang" type="hidden" value="{$music.D_RANG_NEW}" />
+        <input name="rang" type="hidden" value="{$music_item.D_RANG}" />
+        <input name="nouv_rang" type="hidden" value="{$music_item.D_RANG_NEW}" />
         <input type="hidden" name="envoi" id="hiddenField" value="rang" />
         <input type="image" name="down" src="plugins/music_player/template/icon/page_end.png" />
       </form>
     {/if}
     </td>
-    <td><a href="admin.php?page=plugin&section=music_player/admin/admin_edit.php&music_id={$music.ID}" title="{'mp_admin_nm_edit'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/category_edit.png" class="button" alt="{'mp_admin_nm_edit'|@translate}"></a></td>
-    <td><a href="admin.php?page=plugin&section=music_player/admin/admin_edit.php&suppr={$music.ID}" title="{'delete'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/delete.png" class="button" alt="{'delete'|@translate}"></a> </td>
+    <td><a href="admin.php?page=plugin&section=music_player/admin/admin_edit.php&music_id={$music_item.ID}" title="{'mp_admin_nm_edit'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/category_edit.png" class="button" alt="{'mp_admin_nm_edit'|@translate}"></a></td>
+    <td><a href="admin.php?page=plugin&section=music_player/admin/admin_edit.php&suppr={$music_item.ID}" title="{'delete'|@translate}"><img src="{$pwg_root}{$themeconf.icon_dir}/delete.png" class="button" alt="{'delete'|@translate}"></a> </td>
   </tr>
   {/foreach}<!-- END music -->
 </table>
