@@ -116,4 +116,23 @@ $lang['mp_admin_2_opt1'] = 'Toon plugin als blok in het menu';
 $lang['mp_help_q1'] = 'Waar moet de MP3 opgeslagen worden';
 $lang['mp_help_div8'] = 'Nieuw: je kan de toegang tot de speler beperken door de groep \'music_group\' toe te voegen, alleen leden van deze groep kunnen de speler gebruiken. Als deze groep niet aanwezig is, kan iedereen de MP3 speler gebruiken.';
 $lang['mp_help_q5'] = 'Hoe kan ik een remote mp3 in een andere directory toevoegen?';
-?>
+$lang['mp_help_div4'] = 'Deze plug-in staat je toe om een aantal speellijsten aan te maken en te beheren, je muziekspeler te personaliseren en zijn pop-up.<br />
+Om een speellijst aan te maken doe je het volgende: <br />
+- Allereerst heb je een map \'/music/\' nodig in de map van de plug-in. BELANGRIJK !! (Gebruikers met een gratis licentie kunnen deze stap overslaan.) De muziekmap moet alle autorisaties en lees-/schrijfrechten hebben op de server (chmod 777 of rwxrwxrwx) !!<br />
+- Maak daarna een andere map in \'/music/\'aan welke de mp3-bestanden en speellijsten met .xml-extensie zal bevatten. Wees voorzichtig: de mapnaam is belangrijk: DUS GEBRUIK GEEN SPECIALE TEKENS voor de naam van de map.<br />
+- Klik dan op "Synchroniseer met /music": mappen in /music worden weergegeven met gesorteerde mp3-bestanden. Speellijsten met de xml-extensie zijn aangemaakt met dezelfde naam als de mapnaam.<br />
+- Ontvangst van de speellijst: dit wordt gebruikt om een kleine beschrijvende tekst toe te voegen die zal fungeren als link om de speellijst af te spelen in het venster van de speler. Als je dit veld leeg laat dan zal de speellijst niet worden opgenomen in de database.<br />
+- Het verzenden van het formulier en het opslaan in de database: daarna kan je een miniatuurafbeelding toevoegen door deze te uploaden of door een link toe te voegen naar zo\'n afbeelding: je kan het zelfs direct via ftp toevoegen met als naam \'[naam van het bestand].jpg\'.<br /><br />
+Om de speellijst te beheren:<br />
+- klik op het tweede icoontje naast de speellijst;<br />
+- en volg dan deze stappen: vergeet de laatste niet!';
+$lang['mp_help_q3'] = 'Waar heeft \'Laat miniatuurweergave in de speellijst zien\' betrekking op?';
+$lang['mp_help_div6'] = 'Ja: Sinds 1.3 is een invoerveld voor podcasts en speellijsten op afstand toegevoegd. Wees voorzichtig: speellijsten moeten worden toegevoegd in Atom-, Xspf- (gebruikt door de plug-in) of RSS-formaat (podcasts bestaan altijd uit RSS).';
+$lang['mp_help_div5'] = 'Ja: Om dit toe te passen klik je op je speellijst en voeg je als tweede stap je bestand toe. Wees voorzichtig: ook al staat de mp3 op dezelfde server als deze plug-in, je moet de gehele URL typen, inclusief http://.';
+$lang['mp_help_div3'] = 'Het gaat over een miniatuurweergave die u kunt invoegen ("Beheer miniatuurweergave"), bij de speellijst.';
+$lang['mp_help_div2'] = 'Je update je speellijst nu niet: dus klik op het tweede icoontje ("Beheer muziek") naast de speellijst en klik dan in de laatste stap op \'Verzend aanpassingen\'.';
+$lang['mp_help_div1'] = 'De Mp3 moet geplaatst worden in de muziekmap van de plug-in op deze manier: "[PWG folder]/plugins/music_player/music/[new playlist]/". Je moet de speellijsten laten sorteren op artiest (music/moby/go.mp3), of de naam van de artiest direct in de bestandsnaam vermelden (music/electro/moby-go.mp3).';
+$lang['mp_admin_leg1'] = 'Podcast (RSS) of speellijst op afstand';
+$lang['mp_admin_3_opt2_2'] = 'Als de optie thumbnail geactiveerd is, dan is de hoogte van de speellijst en 20 pixels van de balk gelijk aan de totale hoogte.';
+$lang['mp_admin_3_opt3_3'] = 'Als de optie thumbnail geactiveerd is en de breedte van deze kleiner is dan de totale breedte, dan zal de thumbnail zichzelf links uitlijnen.';
+$lang['mp_admin_3_opt10'] = 'Activeer het automatische beheer van de stijlen: de stijlen die toegepast zijn op de mediaspeler zullen worden ingesteld als de stijlen van de gebruiker. Als deze optie is uitgeschakeld, of als de stijl of gebruiker niet bestaat voor de mediaspeler, dan wordt het standaard onderwerp toegepast, dat er ook aan vooraf ging.';
