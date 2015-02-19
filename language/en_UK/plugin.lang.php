@@ -82,9 +82,9 @@ $lang['mp_adm_envoi_2'] = 'contains';
 $lang['mp_adm_return'] = 'Back to playlists';
 $lang['mp_adm_return_2'] = 'Back to the playlist';
 
-$lang['mp_adm_edit_1'] = 'Descriptio text';
+$lang['mp_adm_edit_1'] = 'Description text';
 $lang['mp_adm_edit_2'] = 'Playlist';
-$lang['mp_adm_edit_3'] = 'Synchronise the playlist';
+$lang['mp_adm_edit_3'] = 'Synchronize the playlist';
 
 $lang['mp_ou'] = 'OR';
 $lang['mp_adm_info_img'] = "(add a new image erase the old one)";
@@ -104,7 +104,7 @@ $lang['mp_msg_edit4'] = "Remove from the data base  :";
 $lang['mp_msg_edit5'] = "Remove from :";
 
 $lang['mp_adm_etape_1'] = "First step (optional)";
-$lang['mp_adm_et1_txt'] = "You have added ou removed some mp3 files ib the folder ? If Yes, you have to syncronise to the data base:";
+$lang['mp_adm_et1_txt'] = 'You have added ou removed some mp3 files in the folder ? If Yes, you have to syncronise to the data base:';
 $lang['mp_adm_etape_2'] = "2nd step (optionnal)";
 $lang['mp_adm_et2_txt'] = "Add distant mp3. ";
 $lang['mp_adm_et2_nbr'] = "Number of added : ";
@@ -142,5 +142,3 @@ $lang['mp_info_min']="[ The thumbnail is optional. ]";
 
 $lang['mp_text_no_autorisation']="You are not allowed to listen music ! Please contact the webmaster to know why, and maybe to be allow";
 
-
-?>
