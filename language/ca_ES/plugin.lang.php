@@ -37,4 +37,11 @@ $lang['mp_msg_admin_3_1'] = 'Arxiu';
 $lang['mp_msg_admin_3_2'] = 'Creat el';
 $lang['mp_need_help'] = 'Necessita ajuda?';
 $lang['mp_send'] = 'Enviar';
-?>
+$lang['mp_adm_ed_sup_ok'] = 'Esteu segurs?';
+$lang['mp_adm_edit_1'] = 'Text de descripció';
+$lang['mp_adm_envoi_1'] = 'Descripció de';
+$lang['mp_adm_envoi_2'] = 'conté';
+$lang['mp_adm_et2_rg'] = 'Insereix una fila:';
+$lang['mp_adm_etape_2'] = '2n pas!';
+$lang['mp_adm_etape_3'] = '3r pas!';
+$lang['mp_adm_etape_4'] = '4r pas!';
