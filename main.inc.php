@@ -6,7 +6,7 @@ Description: play music
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=162
 Author: Flop25
 Author URI: http://www.planete-flop.fr/
-
+Has Settings: true
 */
 
 if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
